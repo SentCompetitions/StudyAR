@@ -251,6 +251,12 @@
             <e p="Camera" t="Include">
               <e p="MainCamera.cs" t="Include" />
             </e>
+            <e p="Elements" t="Include">
+              <e p="Battery" t="Include">
+                <e p="Battery.cs" t="Include" />
+              </e>
+            </e>
+            <e p="GameManager.cs" t="Include" />
             <e p="Player" t="Include">
               <e p="Player.cs" t="Include" />
             </e>
