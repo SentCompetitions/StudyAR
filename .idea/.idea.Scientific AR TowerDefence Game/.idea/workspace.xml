@@ -20,19 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f3acecf-c4af-432c-997b-cc28118b02c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery/Battery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery/Battery.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +57,7 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery/Battery.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" />
       </list>
     </option>
   </component>
@@ -115,8 +108,19 @@
       <workItem from="1602563544711" duration="1544000" />
       <workItem from="1602647136132" duration="5836000" />
       <workItem from="1602698772927" duration="1560000" />
-      <workItem from="1602768141227" duration="12869000" />
+      <workItem from="1602768141227" duration="15325000" />
+      <workItem from="1603029019276" duration="3000" />
+      <workItem from="1603029146199" duration="632000" />
+      <workItem from="1603031473620" duration="11925000" />
     </task>
+    <task id="LOCAL-00001" summary="Damage cube together!">
+      <created>1602937936196</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602937936196</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,9 +138,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Damage cube together!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Damage cube together!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602565033000">
@@ -215,5 +222,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="342" key="GridCell.Tab.3.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1602565705363" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602937937553">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1602937937553" />
   </component>
 </project>

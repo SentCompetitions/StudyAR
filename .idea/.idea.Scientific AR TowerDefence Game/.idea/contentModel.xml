@@ -264,6 +264,9 @@
               <e p="VirtualButtonHandler.cs" t="Include" />
             </e>
           </e>
+          <e p="Menu" t="Include">
+            <e p="Menu.cs" t="Include" />
+          </e>
         </e>
         <e p="ScriptTemplates" t="Include">
           <e p="50-Mirror__Network Manager-NewNetworkManager.cs.txt" t="Include" />

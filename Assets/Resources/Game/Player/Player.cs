@@ -33,6 +33,13 @@ public class Player : NetworkBehaviour
         GameObject battery = Instantiate(GameManager.instance.batteryPrefab, Vector3.zero, Quaternion.identity,
             GameManager.instance.batteryTarget.transform);
         NetworkServer.Spawn(battery);
+        RcpStartGame();
+    }
+
+    [ClientRpc]
+    void RcpStartGame()
+    {
+        Debug.Log("Game started");
     }
 
     [Command]
