@@ -87,8 +87,15 @@ public class Menu : MonoBehaviour
         ToggleMenu(mainMenu);
     }
 
+    public void Exit()
+    {
+        if (_isHost) manager.StopHost();
+        else manager.StopClient();
+        ToggleMenu(mainMenu);
+    }
+
     private void ToggleMenu(GameObject menu)
     {
-        menu.SetActive(!menu.activeSelf);
+        GetComponent<Animator>().SetBool(menu.name, !GetComponent<Animator>().GetBool(menu.name));
     }
 }

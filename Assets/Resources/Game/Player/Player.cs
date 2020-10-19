@@ -17,6 +17,8 @@ public class Player : NetworkBehaviour
         if (isLocalPlayer) mainCamera = Camera.main.gameObject;
         else UI.SetActive(false);
         if (!isServer) hostOnlyObjects.ForEach(o => o.SetActive(false));
+
+        Debug.Log(NetworkManager.singleton.networkAddress);
     }
 
     private void Update()
