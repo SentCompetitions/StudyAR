@@ -259,6 +259,9 @@
             <e p="GameManager.cs" t="Include" />
             <e p="Player" t="Include">
               <e p="Player.cs" t="Include" />
+              <e p="UI" t="Include">
+                <e p="GameStats.cs" t="Include" />
+              </e>
             </e>
             <e p="VirtualButtons" t="Include">
               <e p="VirtualButtonHandler.cs" t="Include" />

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject batteryTarget;
 
     public List<Player> players = new List<Player>();
+    public Player localPlayer;
 
     public Battery battery;
 
@@ -24,10 +25,14 @@ public class GameManager : MonoBehaviour
     {
         if (NetworkManager.singleton.isNetworkActive)
         {
+            players.Clear();
             foreach (KeyValuePair<uint, NetworkIdentity> kvp in NetworkIdentity.spawned)
             {
-                Player comp = kvp.Value.GetComponent<Player>();
-                if (!players.Contains(comp)) players.Add(comp);
+                if (kvp.Value.TryGetComponent(out Player comp))
+                {
+                    players.Add(comp);
+                    if (comp.isLocalPlayer) localPlayer = comp;
+                }
             }
         }
         else

@@ -9,6 +9,7 @@ public class Player : NetworkBehaviour
 {
     public GameObject UI;
     public List<GameObject> hostOnlyObjects;
+    public List<GameObject> clientOnlyObjects;
 
     private GameObject mainCamera;
 
@@ -17,8 +18,7 @@ public class Player : NetworkBehaviour
         if (isLocalPlayer) mainCamera = Camera.main.gameObject;
         else UI.SetActive(false);
         if (!isServer) hostOnlyObjects.ForEach(o => o.SetActive(false));
-
-        Debug.Log(NetworkManager.singleton.networkAddress);
+        else clientOnlyObjects.ForEach(o => o.SetActive(false));
     }
 
     private void Update()
@@ -41,7 +41,7 @@ public class Player : NetworkBehaviour
     [ClientRpc]
     void RcpStartGame()
     {
-        Debug.Log("Game started");
+        GameManager.instance.localPlayer.UI.GetComponent<Animator>().SetBool("Game", true);
     }
 
     [Command]
