@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\neisv\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\neisv\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Scientific AR TowerDefence Game.562237108.00" t="ExcludeRecursive" />
+    <e p="C:\Users\neisv\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_StudyAR.-613968446.00" t="ExcludeRecursive" />
     <e p="C:\Users\neisv\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
-    <e p="D:\Programming\Unity\Scientific AR TowerDefence Game" t="IncludeRecursive">
+    <e p="D:\Programming\Unity\StudyAR" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Editor" t="Include">
@@ -299,7 +299,7 @@
       <e p="Ninja.WebSockets.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Scientific AR TowerDefence Game.sln" t="IncludeFlat" />
+      <e p="StudyAR.sln" t="IncludeFlat" />
       <e p="Telepathy.csproj" t="IncludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>

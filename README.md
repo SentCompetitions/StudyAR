@@ -1,1 +1,1 @@
-# Scientific AR TowerDefence Game
+# StudyAR
