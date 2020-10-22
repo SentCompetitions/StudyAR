@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Mirror;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Object = System.Object;
 
 public class Player : NetworkBehaviour
 {
@@ -90,7 +92,7 @@ public class Player : NetworkBehaviour
         foreach (GameObject elementPrefab in _manager.experience.AllElements)
         {
             GameObject obj = Instantiate(elementPrefab);
-            obj.transform.position = _manager.elementsSpawnPoints[0].position; //- elementPrefab.transform.position;
+            obj.transform.position = _manager.elementsSpawnPoints[0].position - elementPrefab.transform.GetChild(0).position;
             NetworkServer.Spawn(obj);
         }
 
@@ -102,6 +104,7 @@ public class Player : NetworkBehaviour
     {
         _manager.localPlayer.UI.GetComponent<Animator>().SetBool("Game", true);
         _manager.isGameStarted = true;
+        FindObjectsOfType<Element>().ToList().ForEach(x => x.transform.SetParent(_manager.elementsParent));
     }
 
     [Command]
