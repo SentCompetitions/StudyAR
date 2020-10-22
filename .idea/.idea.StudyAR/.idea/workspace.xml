@@ -19,20 +19,42 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Elements.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/projectSettingsUpdater.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/riderModule.iml" beforeDir="false" />
+    <list default="true" id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="Update Unity">
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/Main/MainTarget_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/Main/MainTarget_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/EnergyElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/EnergyElement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Experience.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Experience.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Desk.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Desk.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/Main/chrome_7hhfsGjNQk_scaled.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/Main/chrome_7hhfsGjNQk_scaled.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery/Battery.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery/Battery.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery/Battery.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery/Battery.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,20 +64,39 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/EnergyElement.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/.idea.Scientific AR TowerDefence Game/.idea/.name" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Experiences.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Experience.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/ElementBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/EnergyElementBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/ElementBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/EnergyElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1jCLntx4KDYBGY92Is1RJC83Lck" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python" />
@@ -71,10 +112,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27072">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="27072" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -89,15 +130,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603303296899</updated>
-      <workItem from="1603303300362" duration="58000" />
+      <workItem from="1603303300362" duration="4318000" />
+      <workItem from="1603342551581" duration="11837000" />
     </task>
+    <task id="LOCAL-00001" summary="Update Unity">
+      <created>1603303408014</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603303408014</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -108,8 +158,50 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Update Unity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Unity" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="342" key="GridCell.Tab.0.bottom" timestamp="1603373194912">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603373194912" />
+    <state width="1877" height="342" key="GridCell.Tab.0.center" timestamp="1603373194911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.0.center/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603373194911" />
+    <state width="1877" height="342" key="GridCell.Tab.0.left" timestamp="1603373194911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.0.left/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603373194911" />
+    <state width="1877" height="342" key="GridCell.Tab.0.right" timestamp="1603373194912">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.0.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603373194912" />
+    <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1603373227722">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603373227722" />
+    <state width="1877" height="342" key="GridCell.Tab.1.center" timestamp="1603373227722">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603373227721" />
+    <state width="1877" height="342" key="GridCell.Tab.1.left" timestamp="1603373227721">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603373227721" />
+    <state width="1877" height="342" key="GridCell.Tab.1.right" timestamp="1603373227722">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603373227722" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603303409852">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603303409852" />
   </component>
 </project>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="qr_main" size="10.000000 10.000000" />
+    <ImageTarget name="MainTarget" size="29.700001 21.015570" />
     <ImageTarget name="chrome_7hhfsGjNQk" size="20.000000 19.947229" />
   </Tracking>
 </QCARConfig>

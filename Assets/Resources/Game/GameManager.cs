@@ -2,19 +2,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using Resources.Game;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public GameObject batteryPrefab;
-    public GameObject batteryTarget;
+    [Header("Scene setup")]
+    public GameObject mainTarget;
 
+    public Transform elementsParent;
+    public Transform[] elementsSpawnPoints;
+
+    [Header("Multiplayer (Readonly)")]
     public List<Player> players = new List<Player>();
     public Player localPlayer;
+    public bool isGameStarted = false;
 
-    public Battery battery;
+    [Header("Experiences")]
+    public Experience experience;
 
     void Start()
     {
