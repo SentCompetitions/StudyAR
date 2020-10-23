@@ -26,33 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="Update Unity">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/CustomNetworkManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/CustomNetworkManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Obj/diod.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Obj/diod.obj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Obj/resistor.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Obj/resistor.obj.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/EnergyElement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/EnergyElement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +43,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -86,6 +68,7 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IEnergyElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/CustomNetworkManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/Main.unity" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" />
       </list>
     </option>
@@ -105,6 +88,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -150,6 +134,7 @@
       <workItem from="1603444873255" duration="741000" />
       <workItem from="1603445657762" duration="385000" />
       <workItem from="1603446078570" duration="11425000" />
+      <workItem from="1603464655501" duration="12809000" />
     </task>
     <task id="LOCAL-00001" summary="Update Unity">
       <created>1603303408014</created>
@@ -211,9 +196,14 @@
     <MESSAGE value="Add elements scripts, spawn and moving" />
     <MESSAGE value="Add app icon, update table and battery models" />
     <MESSAGE value="Add app icon, update table and battery models and readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add app icon, update table and battery models and readme" />
+    <MESSAGE value="Mouse on pc, multiplayer dragging (client authority fix), hide table in menu, multiple elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mouse on pc, multiplayer dragging (client authority fix), hide table in menu, multiple elements" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603469018200">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603469018200" />
     <state width="1879" height="342" key="GridCell.Tab.0.bottom" timestamp="1603390467093">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -278,18 +268,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.3.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603390467095" />
-    <state x="582" y="274" key="MultipleFileMergeDialog" timestamp="1603464626081">
+    <state x="184" y="86" key="MergeDialog" timestamp="1603464765338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="582" y="274" key="MultipleFileMergeDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464626081" />
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464765338" />
+    <state x="582" y="274" key="MultipleFileMergeDialog" timestamp="1603464765355">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="582" y="274" key="MultipleFileMergeDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464765355" />
+    <state x="717" y="139" key="RollbackChangesDialog" timestamp="1603466175080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="717" y="139" key="RollbackChangesDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603466175080" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1603446124451">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603446124451" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603399024667">
+    <state x="602" y="135" key="VCS.ChangeListViewerDialog" timestamp="1603464690856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603399024667" />
+    <state x="602" y="135" key="VCS.ChangeListViewerDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464690856" />
+    <state x="652" y="278" key="Vcs.Multiple.Commit.Info.Dialog.Key" timestamp="1603464684602">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="652" y="278" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464684602" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603465066828">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603465066828" />
     <state x="741" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603464578195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -10,18 +10,18 @@ using Object = System.Object;
 
 public class Player : NetworkBehaviour
 {
-    [Header("UI")]
-    public GameObject UI;
+    [Header("UI")] public GameObject UI;
     public List<GameObject> hostOnlyObjects;
     public List<GameObject> clientOnlyObjects;
-    [Space]
-    public Image pointer;
+    [Space] public Image pointer;
     public Color grabColor;
     public Color errorColor;
     private Color normalColor;
+    [Space] public float timeForClick = 0.1f;
+    private float _clickTime = 0f;
+    private bool _isHold;
 
-    [Header("Debug (Readonly)")]
-    public Element grabbedElement;
+    [Header("Debug (Readonly)")] public Element grabbedElement;
 
     private GameObject mainCamera;
     private GameManager _manager = GameManager.instance;
@@ -34,6 +34,7 @@ public class Player : NetworkBehaviour
             normalColor = pointer.color;
         }
         else UI.SetActive(false);
+
         if (!isServer) hostOnlyObjects.ForEach(o => o.SetActive(false));
         else clientOnlyObjects.ForEach(o => o.SetActive(false));
     }
@@ -45,15 +46,19 @@ public class Player : NetworkBehaviour
         transform.position = mainCamera.transform.position;
         transform.rotation = mainCamera.transform.rotation;
 
-        if(!_manager.IsGameStarted) return;
+        if (!_manager.IsGameStarted) return;
 
         if (Input.touchCount == 1 && !IsPointerOverUIObject())
         {
-            GetElement(Input.GetTouch(0).phase);
+            Debug.Log(Input.GetTouch(0).phase);
+            UpdateTouchInput(Input.GetTouch(0).phase);
         }
-
-        if (Input.GetMouseButtonDown(0)) GetElement(TouchPhase.Began);
-        else if (Input.GetMouseButtonUp(0)) GetElement(TouchPhase.Ended);
+        else
+        {
+            if (Input.GetMouseButtonDown(0)) UpdateTouchInput(TouchPhase.Began);
+            else if (Input.GetMouseButtonUp(0)) UpdateTouchInput(TouchPhase.Ended);
+            else if (Input.touchCount == 0) UpdateTouchInput(TouchPhase.Stationary);
+        }
 
         if (grabbedElement)
         {
@@ -65,6 +70,27 @@ public class Player : NetworkBehaviour
                     grabbedElement.transform.position = hit.point;
                 }
             }
+        }
+    }
+
+    private void UpdateTouchInput(TouchPhase phase)
+    {
+        if (phase == TouchPhase.Began || phase == TouchPhase.Ended && !_isHold && _clickTime != 0f) _clickTime = Time.time;
+
+        if (Time.time - _clickTime < timeForClick && phase == TouchPhase.Ended) Debug.Log("Click");
+        else if (Time.time - _clickTime > timeForClick && _clickTime != 0f)
+        {
+            if (!_isHold) phase = TouchPhase.Began;
+            _isHold = true;
+
+            GetElement(phase);
+            Debug.Log("Hold " + phase);
+        }
+
+        if (phase == TouchPhase.Ended)
+        {
+            _clickTime = 0f;
+            _isHold = false;
         }
     }
 
@@ -130,13 +156,8 @@ public class Player : NetworkBehaviour
         gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
     }
 
-    [Command]
-    public void CmdDamage(int damage)
+    private bool IsPointerOverUIObject()
     {
-        // _manager.battery.health -= damage;
-    }
-
-    private bool IsPointerOverUIObject() {
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
         eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         List<RaycastResult> results = new List<RaycastResult>();
