@@ -251,12 +251,13 @@
             <e p="Camera" t="Include">
               <e p="MainCamera.cs" t="Include" />
             </e>
+            <e p="CustomNetworkManager.cs" t="Include" />
             <e p="Elements" t="Include">
               <e p="Base" t="Include">
                 <e p="Element.cs" t="Include" />
-                <e p="EnergyElement.cs" t="Include" />
               </e>
               <e p="Battery.cs" t="Include" />
+              <e p="Led.cs" t="Include" />
             </e>
             <e p="Experience.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />

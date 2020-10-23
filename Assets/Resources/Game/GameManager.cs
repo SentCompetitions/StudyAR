@@ -16,10 +16,33 @@ public class GameManager : MonoBehaviour
     public Transform elementsParent;
     public Transform[] elementsSpawnPoints;
 
+    [Header("Multiplayer scene prepair")]
+    public List<GameObject> inMenu;
+    public List<GameObject> inGame;
+
     [Header("Multiplayer (Readonly)")]
     public List<Player> players = new List<Player>();
     public Player localPlayer;
-    public bool isGameStarted = false;
+    private bool _isGameStarted = false;
+    public bool IsGameStarted
+    {
+        get => _isGameStarted;
+        set
+        {
+            if (value)
+            {
+                inGame.ForEach(x => x.SetActive(true));
+                inMenu.ForEach(x => x.SetActive(false));
+            }
+            else
+            {
+                inGame.ForEach(x => x.SetActive(false));
+                inMenu.ForEach(x => x.SetActive(true));
+            }
+            _isGameStarted = value;
+        }
+    }
+
 
     [Header("Experiences")]
     public Experience experience;
@@ -27,6 +50,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        inGame.ForEach(x => x.SetActive(false));
+        inMenu.ForEach(x => x.SetActive(true));
     }
 
     private void Update()

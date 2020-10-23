@@ -45,56 +45,72 @@ public class Player : NetworkBehaviour
         transform.position = mainCamera.transform.position;
         transform.rotation = mainCamera.transform.rotation;
 
-        if(!_manager.isGameStarted) return;
+        if(!_manager.IsGameStarted) return;
 
         if (Input.touchCount == 1 && !IsPointerOverUIObject())
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit))
-                {
-                    if (hit.transform.gameObject.TryGetComponent(out Element e))
-                    {
-                        grabbedElement = e;
-                        pointer.color = grabColor;
-                    }
-                    else
-                    {
-                        pointer.color = errorColor;
-                    }
-                }
-                else
-                {
-                    pointer.color = errorColor;
-                }
-            }
-
-            if (Input.GetTouch(0).phase == TouchPhase.Ended)
-            {
-                grabbedElement = null;
-                pointer.color = normalColor;
-            }
+            GetElement(Input.GetTouch(0).phase);
         }
+
+        if (Input.GetMouseButtonDown(0)) GetElement(TouchPhase.Began);
+        else if (Input.GetMouseButtonUp(0)) GetElement(TouchPhase.Ended);
 
         if (grabbedElement)
         {
             RaycastHit[] hits = Physics.RaycastAll(mainCamera.transform.position, mainCamera.transform.forward);
             foreach (var hit in hits)
             {
-                if (hit.transform.gameObject.CompareTag("Platform")) grabbedElement.transform.position = hit.point;
+                if (hit.transform.gameObject.CompareTag("Platform"))
+                {
+                    grabbedElement.transform.position = hit.point;
+                }
             }
+        }
+    }
+
+    private void GetElement(TouchPhase phase)
+    {
+        if (phase == TouchPhase.Began)
+        {
+            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit))
+            {
+                if (hit.transform.gameObject.TryGetComponent(out Element e))
+                {
+                    grabbedElement = e;
+                    CmdSetObjectOwn(grabbedElement.gameObject);
+                    pointer.color = grabColor;
+                }
+                else
+                {
+                    pointer.color = errorColor;
+                }
+            }
+            else
+            {
+                pointer.color = errorColor;
+            }
+        }
+
+        if (phase == TouchPhase.Ended)
+        {
+            grabbedElement = null;
+            pointer.color = normalColor;
         }
     }
 
     [Command]
     public void CmdStartGame()
     {
-        foreach (GameObject elementPrefab in _manager.experience.AllElements)
+        for (var i = 0; i < _manager.experience.AllElements.Length; i++)
         {
+            GameObject elementPrefab = _manager.experience.AllElements[i];
             GameObject obj = Instantiate(elementPrefab);
-            obj.transform.position = _manager.elementsSpawnPoints[0].position - elementPrefab.transform.GetChild(0).position;
+            obj.transform.position =
+                _manager.elementsSpawnPoints[i].position - elementPrefab.transform.GetChild(0).position;
             NetworkServer.Spawn(obj);
         }
+
+        NetworkManager.singleton.maxConnections = 0;
 
         RcpStartGame();
     }
@@ -103,8 +119,15 @@ public class Player : NetworkBehaviour
     void RcpStartGame()
     {
         _manager.localPlayer.UI.GetComponent<Animator>().SetBool("Game", true);
-        _manager.isGameStarted = true;
+        _manager.IsGameStarted = true;
         FindObjectsOfType<Element>().ToList().ForEach(x => x.transform.SetParent(_manager.elementsParent));
+    }
+
+    [Command]
+    void CmdSetObjectOwn(GameObject gameObject)
+    {
+        gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority();
+        gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
     }
 
     [Command]

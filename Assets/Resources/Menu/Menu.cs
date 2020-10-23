@@ -14,6 +14,8 @@ public class Menu : MonoBehaviour
     public GameObject serversList;
     public GameObject serverButtonPrefab;
 
+    private int _maxConnections;
+
     NetworkManager manager;
     Dictionary<long, ServerResponse> discoveredServers = new Dictionary<long, ServerResponse>();
 
@@ -22,6 +24,7 @@ public class Menu : MonoBehaviour
     void Start()
     {
         manager = NetworkManager.singleton;
+        _maxConnections = manager.maxConnections;
         FindServers();
     }
 
@@ -91,6 +94,8 @@ public class Menu : MonoBehaviour
     {
         if (_isHost) manager.StopHost();
         else manager.StopClient();
+        manager.maxConnections = _maxConnections;
+        GameManager.instance.IsGameStarted = false;
         ToggleMenu(mainMenu);
     }
 

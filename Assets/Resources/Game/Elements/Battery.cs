@@ -5,7 +5,7 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Battery : EnergyElement
+public class Battery : Element
 {
     // public Text text;
     //
