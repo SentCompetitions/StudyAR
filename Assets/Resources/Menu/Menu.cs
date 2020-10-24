@@ -13,6 +13,8 @@ public class Menu : MonoBehaviour
     public GameObject mainMenu;
     public GameObject serversList;
     public GameObject serverButtonPrefab;
+    [Header("Connection")]
+    public InputField ip;
 
     private int _maxConnections;
 
@@ -26,11 +28,6 @@ public class Menu : MonoBehaviour
         manager = NetworkManager.singleton;
         _maxConnections = manager.maxConnections;
         FindServers();
-    }
-
-    void Update()
-    {
-        
     }
 
     private void DestroyServers()
@@ -56,7 +53,7 @@ public class Menu : MonoBehaviour
 
     public void FindServers()
     {
-        DestroyServers();
+        // DestroyServers();
         discoveredServers.Clear();
         networkDiscovery.StartDiscovery();
     }
@@ -64,7 +61,8 @@ public class Menu : MonoBehaviour
     public void OnDiscoveredServer(ServerResponse info)
     {
         discoveredServers[info.serverId] = info;
-        SetServers();
+        ip.text = info.uri.Host;
+        // SetServers();
     }
 
     public void Host()
@@ -72,14 +70,12 @@ public class Menu : MonoBehaviour
         manager.StartHost();
         networkDiscovery.AdvertiseServer();
         _isHost = true;
-        ToggleMenu(mainMenu);
     }
 
     private void Client(Uri uri)
     {
         _isHost = false;
         manager.StartClient(uri);
-        ToggleMenu(mainMenu);
     }
 
     public void Client(InputField ip)
@@ -87,7 +83,6 @@ public class Menu : MonoBehaviour
         manager.networkAddress = ip.text;
         _isHost = false;
         manager.StartClient();
-        ToggleMenu(mainMenu);
     }
 
     public void Exit()
@@ -96,11 +91,5 @@ public class Menu : MonoBehaviour
         else manager.StopClient();
         manager.maxConnections = _maxConnections;
         GameManager.instance.IsGameStarted = false;
-        ToggleMenu(mainMenu);
-    }
-
-    private void ToggleMenu(GameObject menu)
-    {
-        GetComponent<Animator>().SetBool(menu.name, !GetComponent<Animator>().GetBool(menu.name));
     }
 }

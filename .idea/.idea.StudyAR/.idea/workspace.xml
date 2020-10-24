@@ -26,11 +26,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="Update Unity">
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu-ToConnect.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu-ToConnect.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_17_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_17_49__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/UI/PlayerUI-In.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/UI/PlayerUI-In.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/UI/PlayerUI-StartGame.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/UI/PlayerUI-StartGame.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QCAR/somedata16" beforeDir="false" afterPath="$PROJECT_DIR$/QCAR/somedata16" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +54,12 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Scenes/Main.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Experience.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -63,13 +74,13 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IEnergyElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/CustomNetworkManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scenes/Main.unity" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" />
       </list>
     </option>
   </component>
@@ -135,6 +146,7 @@
       <workItem from="1603445657762" duration="385000" />
       <workItem from="1603446078570" duration="11425000" />
       <workItem from="1603464655501" duration="12809000" />
+      <workItem from="1603542021441" duration="3665000" />
     </task>
     <task id="LOCAL-00001" summary="Update Unity">
       <created>1603303408014</created>
@@ -200,10 +212,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Mouse on pc, multiplayer dragging (client authority fix), hide table in menu, multiple elements" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603469018200">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603542182090">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603469018200" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603542182090" />
     <state width="1879" height="342" key="GridCell.Tab.0.bottom" timestamp="1603390467093">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,14 +284,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="MergeDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464765338" />
-    <state x="582" y="274" key="MultipleFileMergeDialog" timestamp="1603464765355">
+    <state x="582" y="274" key="MultipleFileMergeDialog" timestamp="1603542242515">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="582" y="274" key="MultipleFileMergeDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464765355" />
-    <state x="717" y="139" key="RollbackChangesDialog" timestamp="1603466175080">
+    <state x="582" y="274" key="MultipleFileMergeDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603542242515" />
+    <state x="717" y="139" key="RollbackChangesDialog" timestamp="1603542187899">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="717" y="139" key="RollbackChangesDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603466175080" />
+    <state x="717" y="139" key="RollbackChangesDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603542187899" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1603446124451">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -300,5 +312,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="741" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464578195" />
+    <state x="677" y="151" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603542183475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="677" y="151" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603542183475" />
   </component>
 </project>

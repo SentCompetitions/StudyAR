@@ -247,6 +247,9 @@
           <e p="version.txt" t="Include" />
         </e>
         <e p="Resources" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="OFL.txt" t="Include" />
+          </e>
           <e p="Game" t="Include">
             <e p="Camera" t="Include">
               <e p="MainCamera.cs" t="Include" />

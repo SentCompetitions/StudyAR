@@ -13,11 +13,15 @@ public class Player : NetworkBehaviour
     [Header("UI")] public GameObject UI;
     public List<GameObject> hostOnlyObjects;
     public List<GameObject> clientOnlyObjects;
-    [Space] public Image pointer;
+    [Space]
+    public Image pointer;
     public Color grabColor;
     public Color errorColor;
     private Color normalColor;
-    [Space] public float timeForClick = 0.1f;
+    private Sprite selectPointer;
+    public Sprite movePointer;
+    [Space]
+    public float timeForClick = 0.1f;
     private float _clickTime = 0f;
     private bool _isHold;
 
@@ -32,6 +36,7 @@ public class Player : NetworkBehaviour
         {
             mainCamera = Camera.main.gameObject;
             normalColor = pointer.color;
+            selectPointer = pointer.sprite;
         }
         else UI.SetActive(false);
 
@@ -71,6 +76,11 @@ public class Player : NetworkBehaviour
                 }
             }
         }
+        else
+        {
+            if (GetElement()) pointer.sprite = movePointer;
+            else pointer.sprite = selectPointer;
+        }
     }
 
     private void UpdateTouchInput(TouchPhase phase)
@@ -83,24 +93,10 @@ public class Player : NetworkBehaviour
             if (!_isHold) phase = TouchPhase.Began;
             _isHold = true;
 
-            GetElement(phase);
-            Debug.Log("Hold " + phase);
-        }
-
-        if (phase == TouchPhase.Ended)
-        {
-            _clickTime = 0f;
-            _isHold = false;
-        }
-    }
-
-    private void GetElement(TouchPhase phase)
-    {
-        if (phase == TouchPhase.Began)
-        {
-            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit))
+            if (phase == TouchPhase.Began)
             {
-                if (hit.transform.gameObject.TryGetComponent(out Element e))
+                var e = GetElement();
+                if (e)
                 {
                     grabbedElement = e;
                     CmdSetObjectOwn(grabbedElement.gameObject);
@@ -111,17 +107,34 @@ public class Player : NetworkBehaviour
                     pointer.color = errorColor;
                 }
             }
-            else
+
+            if (phase == TouchPhase.Ended)
             {
-                pointer.color = errorColor;
+                grabbedElement = null;
+                pointer.color = normalColor;
             }
+
+            Debug.Log("Hold " + phase);
         }
 
         if (phase == TouchPhase.Ended)
         {
-            grabbedElement = null;
-            pointer.color = normalColor;
+            _clickTime = 0f;
+            _isHold = false;
         }
+    }
+
+    private Element GetElement()
+    {
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit))
+        {
+            if (hit.transform.gameObject.TryGetComponent(out Element e))
+            {
+                return e;
+            }
+        }
+
+        return null;
     }
 
     [Command]
