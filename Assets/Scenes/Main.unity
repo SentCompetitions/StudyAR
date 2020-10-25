@@ -817,7 +817,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968960768}
-  m_Mesh: {fileID: 1962760765}
+  m_Mesh: {fileID: 1901975119}
 --- !u!23 &968960770
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -837,7 +837,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1478897512}
+  - {fileID: 1013924006}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -905,10 +905,10 @@ MonoBehaviour:
   mTrackableName: MainTarget
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Main.xml
-  mAspectRatio: 0.70759493
+  mAspectRatio: 0.7073791
   mImageTargetType: 0
-  mWidth: 29.7
-  mHeight: 21.01557
+  mWidth: 21
+  mHeight: 14.854961
   mRuntimeTexture: {fileID: 0}
 --- !u!4 &968960774
 Transform:
@@ -928,6 +928,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1013924006
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'MainTargetMaterial
+
+    15262'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 17a06067f56c4b8097defc460033c5c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!4 &1174260958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4555783527838978866, guid: cbfc4efb95dd4d44094b2b9100009125, type: 3}
@@ -1304,35 +1333,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 76d193518478c8a45896316c5a77ecf8, type: 3}
   m_PrefabInstance: {fileID: 1318243261}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1478897512
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'MainTargetMaterial
-
-    78118'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3d0751b993214e10a615aa60374e92b8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1698664258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,13 +1428,13 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698664258}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!43 &1962760765
+--- !u!43 &1901975119
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ImageTargetMesh15186
+  m_Name: ImageTargetMesh15252
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1446,7 +1446,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 14.85, y: 0, z: 10.507785}
+      m_Extent: {x: 1.05, y: 0, z: 0.742748}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1525,7 +1525,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 9a996dc100000000e31f28c1000000000000803f0000000000000000000000009a996dc100000000e31f2841000000000000803f00000000000000000000803f9a996d4100000000e31f28c1000000000000803f000000000000803f000000009a996d4100000000e31f2841000000000000803f000000000000803f0000803f
+    _typelessdata: 000028c100000000ecadedc0000000000000803f000000000000000000000000000028c100000000ecaded40000000000000803f00000000000000000000803f0000284100000000ecadedc0000000000000803f000000000000803f000000000000284100000000ecaded40000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1726,6 +1726,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2163986575551317547, guid: 78a6ee94acc5a5b44bbc2c4114634654, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163986575551317547, guid: 78a6ee94acc5a5b44bbc2c4114634654, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Mirror.Discovery.NetworkDiscoveryBase`2[[Mirror.Discovery.ServerRequest,
+        Mirror.Components
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163986575551317547, guid: 78a6ee94acc5a5b44bbc2c4114634654, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163986575551317547, guid: 78a6ee94acc5a5b44bbc2c4114634654, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163986575551317547, guid: 78a6ee94acc5a5b44bbc2c4114634654, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 810907602}
+    - target: {fileID: 2163986575551317547, guid: 78a6ee94acc5a5b44bbc2c4114634654, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartDiscovery
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163986575551317547, guid: 78a6ee94acc5a5b44bbc2c4114634654, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7363244936665081329, guid: 78a6ee94acc5a5b44bbc2c4114634654, type: 3}
       propertyPath: m_Camera
       value: 

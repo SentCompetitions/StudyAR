@@ -10,16 +10,16 @@ using Object = System.Object;
 
 public class Player : NetworkBehaviour
 {
-    [Header("UI")] public GameObject UI;
+    [Header("UI")]
+    public GameObject UI;
     public List<GameObject> hostOnlyObjects;
     public List<GameObject> clientOnlyObjects;
     [Space]
     public Image pointer;
-    public Color grabColor;
-    public Color errorColor;
-    private Color normalColor;
     private Sprite selectPointer;
     public Sprite movePointer;
+    public Sprite connectPointer;
+    public Sprite errorPointer;
     [Space]
     public float timeForClick = 0.1f;
     private float _clickTime = 0f;
@@ -30,12 +30,23 @@ public class Player : NetworkBehaviour
     private GameObject mainCamera;
     private GameManager _manager = GameManager.instance;
 
+    private Sprite _newPointer;
+
+    public Sprite NewPointer
+    {
+        get => _newPointer;
+        private set
+        {
+            UI.GetComponent<Animator>().SetTrigger("ChangePointer");
+            _newPointer = value;
+        }
+    }
+
     private void Start()
     {
         if (isLocalPlayer)
         {
             mainCamera = Camera.main.gameObject;
-            normalColor = pointer.color;
             selectPointer = pointer.sprite;
         }
         else UI.SetActive(false);
@@ -76,11 +87,6 @@ public class Player : NetworkBehaviour
                 }
             }
         }
-        else
-        {
-            if (GetElement()) pointer.sprite = movePointer;
-            else pointer.sprite = selectPointer;
-        }
     }
 
     private void UpdateTouchInput(TouchPhase phase)
@@ -100,18 +106,18 @@ public class Player : NetworkBehaviour
                 {
                     grabbedElement = e;
                     CmdSetObjectOwn(grabbedElement.gameObject);
-                    pointer.color = grabColor;
+                    NewPointer = movePointer;
                 }
                 else
                 {
-                    pointer.color = errorColor;
+                    NewPointer = errorPointer;
                 }
             }
 
             if (phase == TouchPhase.Ended)
             {
                 grabbedElement = null;
-                pointer.color = normalColor;
+                NewPointer = selectPointer;
             }
 
             Debug.Log("Hold " + phase);
