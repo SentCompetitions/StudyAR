@@ -24,8 +24,14 @@ public class Player : NetworkBehaviour
     public float timeForClick = 0.1f;
     private float _clickTime = 0f;
     private bool _isHold;
+    [Space]
+    public GameObject connectButtons;
+    public GameObject connectButtonPrefab;
 
-    [Header("Debug (Readonly)")] public Element grabbedElement;
+    [Header("Debug (Readonly)")]
+    public Element grabbedElement;
+    private WirePort selectedWirePort;
+    private Element selectedElement;
 
     private GameObject mainCamera;
     private GameManager _manager = GameManager.instance;
@@ -69,7 +75,7 @@ public class Player : NetworkBehaviour
             Debug.Log(Input.GetTouch(0).phase);
             UpdateTouchInput(Input.GetTouch(0).phase);
         }
-        else
+        else if (!IsPointerOverUIObject())
         {
             if (Input.GetMouseButtonDown(0)) UpdateTouchInput(TouchPhase.Began);
             else if (Input.GetMouseButtonUp(0)) UpdateTouchInput(TouchPhase.Ended);
@@ -93,13 +99,70 @@ public class Player : NetworkBehaviour
     {
         if (phase == TouchPhase.Began || phase == TouchPhase.Ended && !_isHold && _clickTime != 0f) _clickTime = Time.time;
 
-        if (Time.time - _clickTime < timeForClick && phase == TouchPhase.Ended) Debug.Log("Click");
+        if (Time.time - _clickTime < timeForClick && phase == TouchPhase.Ended)
+        {
+            var e = GetElement();
+
+            if (selectedWirePort.Equals(default(WirePort)))
+            {
+                if (e && !UI.GetComponent<Animator>().GetBool("Connect"))
+                {
+                    foreach (Transform o in connectButtons.transform) Destroy(o.gameObject);
+                    foreach (WirePort wirePort in e.wirePorts)
+                    {
+                        GameObject newButton = Instantiate(connectButtonPrefab, connectButtons.transform);
+                        newButton.GetComponentInChildren<Text>().text = wirePort.type;
+                        WirePort tempWirePort = wirePort;
+                        newButton.GetComponent<Button>().onClick.AddListener(() => StartConnectingPorts(tempWirePort));
+                    }
+
+                    UI.GetComponent<Animator>().SetBool("Connect", true);
+                    NewPointer = selectPointer;
+                    selectedElement = e;
+                }
+                else if (UI.GetComponent<Animator>().GetBool("Connect"))
+                {
+                    UI.GetComponent<Animator>().SetBool("Connect", false);
+                    NewPointer = selectPointer;
+                }
+                else
+                {
+                    StartCoroutine(BlinkPointer(errorPointer));
+                }
+            }
+            else
+            {
+                if (e && e != selectedElement)
+                {
+                    foreach (Transform o in connectButtons.transform) Destroy(o.gameObject);
+                    foreach (WirePort wirePort in e.wirePorts)
+                    {
+                        GameObject newButton = Instantiate(connectButtonPrefab, connectButtons.transform);
+                        newButton.GetComponentInChildren<Text>().text = wirePort.type;
+                        WirePort from = selectedWirePort;
+                        WirePort to = wirePort;
+                        newButton.GetComponent<Button>().onClick.AddListener(() => ConnectPorts(from, to));
+                    }
+
+                    UI.GetComponent<Animator>().SetBool("Connect", true);
+                    NewPointer = selectPointer;
+                    selectedElement = null;
+                    selectedWirePort = default;
+                }
+                else
+                {
+                    StartCoroutine(BlinkPointer(errorPointer));
+                }
+            }
+
+            Debug.Log("Click");
+        }
         else if (Time.time - _clickTime > timeForClick && _clickTime != 0f)
         {
             if (!_isHold) phase = TouchPhase.Began;
             _isHold = true;
 
-            if (phase == TouchPhase.Began)
+            if (phase == TouchPhase.Began && !selectedWirePort.Equals(default(WirePort)))
             {
                 var e = GetElement();
                 if (e)
@@ -114,7 +177,7 @@ public class Player : NetworkBehaviour
                 }
             }
 
-            if (phase == TouchPhase.Ended)
+            if (phase == TouchPhase.Ended && !selectedWirePort.Equals(default(WirePort)))
             {
                 grabbedElement = null;
                 NewPointer = selectPointer;
@@ -141,6 +204,29 @@ public class Player : NetworkBehaviour
         }
 
         return null;
+    }
+
+    private void StartConnectingPorts(WirePort originPort)
+    {
+        selectedWirePort = originPort;
+        NewPointer = connectPointer;
+        UI.GetComponent<Animator>().SetBool("Connect", false);
+    }
+
+    private void ConnectPorts(WirePort from, WirePort to)
+    {
+        //from.connectedWirePort = to;
+        //to.connectedWirePort = from;
+        Debug.Log($"Created link between {from.wirePos.position} and {to.wirePos.position}");
+        UI.GetComponent<Animator>().SetBool("Connect", false);
+    }
+
+    private IEnumerator BlinkPointer(Sprite blinkPointer)
+    {
+        Sprite old = pointer.sprite;
+        NewPointer = blinkPointer;
+        yield return new WaitForSeconds(0.5f);
+        if (pointer.sprite == blinkPointer) NewPointer = old;
     }
 
     [Command]
