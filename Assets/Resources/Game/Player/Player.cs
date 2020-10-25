@@ -162,7 +162,7 @@ public class Player : NetworkBehaviour
             if (!_isHold) phase = TouchPhase.Began;
             _isHold = true;
 
-            if (phase == TouchPhase.Began && !selectedWirePort.Equals(default(WirePort)))
+            if (phase == TouchPhase.Began && selectedWirePort.Equals(default(WirePort)))
             {
                 var e = GetElement();
                 if (e)
@@ -177,7 +177,7 @@ public class Player : NetworkBehaviour
                 }
             }
 
-            if (phase == TouchPhase.Ended && !selectedWirePort.Equals(default(WirePort)))
+            if (phase == TouchPhase.Ended && selectedWirePort.Equals(default(WirePort)))
             {
                 grabbedElement = null;
                 NewPointer = selectPointer;
