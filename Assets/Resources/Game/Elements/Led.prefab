@@ -130,9 +130,11 @@ MonoBehaviour:
   syncInterval: 0.1
   wirePorts:
   - type: +
-    wirePos: {fileID: 0}
+    wirePos: {fileID: 98425078029230083}
+    element: {fileID: 0}
   - type: '-'
-    wirePos: {fileID: 0}
+    wirePos: {fileID: 4558477725945106523}
+    element: {fileID: 0}
 --- !u!135 &1189956668365203189
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -181,8 +183,10 @@ MonoBehaviour:
   wirePorts:
   - type: +
     wirePos: {fileID: 98425078029230083}
+    element: {fileID: 0}
   - type: '-'
     wirePos: {fileID: 4558477725945106523}
+    element: {fileID: 0}
 --- !u!1001 &3164367032632841585
 PrefabInstance:
   m_ObjectHideFlags: 0

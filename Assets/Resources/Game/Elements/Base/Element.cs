@@ -15,5 +15,5 @@ public struct WirePort
 {
     public string type;
     public Transform wirePos;
-    //public WirePort? connectedWirePort;
+    public GameObject element;
 }

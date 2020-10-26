@@ -26,7 +26,9 @@ public class Player : NetworkBehaviour
     private bool _isHold;
     [Space]
     public GameObject connectButtons;
+    public Color buttonError;
     public GameObject connectButtonPrefab;
+    public GameObject wirePrefab;
 
     [Header("Debug (Readonly)")]
     public Element grabbedElement;
@@ -138,10 +140,27 @@ public class Player : NetworkBehaviour
                     foreach (WirePort wirePort in e.wirePorts)
                     {
                         GameObject newButton = Instantiate(connectButtonPrefab, connectButtons.transform);
-                        newButton.GetComponentInChildren<Text>().text = wirePort.type;
                         WirePort from = selectedWirePort;
                         WirePort to = wirePort;
-                        newButton.GetComponent<Button>().onClick.AddListener(() => ConnectPorts(from, to));
+
+                        Wire wire = FindObjectsOfType<Wire>().ToList()
+                            .Find(w =>
+                                (w.wirePort1.wirePos == from.wirePos || w.wirePort2.wirePos == from.wirePos) &&
+                                (w.wirePort1.wirePos == to.wirePos || w.wirePort2.wirePos == to.wirePos));
+
+                        newButton.GetComponentInChildren<Text>().text = wirePort.type;
+                        if (!wire)
+                        {
+                            from.element = selectedElement.gameObject;
+                            to.element = e.gameObject;
+                            newButton.GetComponent<Button>().onClick.AddListener(() => ConnectPorts(from, to));
+                        }
+                        else
+                        {
+                            newButton.GetComponent<Image>().color = buttonError;
+                            GameObject temp = wire.gameObject;
+                            newButton.GetComponent<Button>().onClick.AddListener(() => DestroyWithClose(temp));
+                        }
                     }
 
                     UI.GetComponent<Animator>().SetBool("Connect", true);
@@ -215,10 +234,38 @@ public class Player : NetworkBehaviour
 
     private void ConnectPorts(WirePort from, WirePort to)
     {
-        //from.connectedWirePort = to;
-        //to.connectedWirePort = from;
-        Debug.Log($"Created link between {from.wirePos.position} and {to.wirePos.position}");
+        CmdSpawnWire(from, to);
         UI.GetComponent<Animator>().SetBool("Connect", false);
+    }
+
+    private void DestroyWithClose(GameObject o)
+    {
+        UI.GetComponent<Animator>().SetBool("Connect", false);
+        CmdDestroy(o);
+    }
+
+    [Command]
+    private void CmdDestroy(GameObject o)
+    {
+        NetworkServer.Destroy(o);
+    }
+
+    [Command]
+    private void CmdSpawnWire(WirePort from, WirePort to)
+    {
+        Debug.Log($"[SERVER] Created link between {from.element} and {to.element}");
+        GameObject obj = Instantiate(wirePrefab);
+        Wire wire = obj.GetComponent<Wire>();
+        wire.wirePort1 = from;
+        wire.wirePort2 = to;
+        NetworkServer.Spawn(obj);
+        RpcSpawnWire(obj);
+    }
+
+    [ClientRpc]
+    private void RpcSpawnWire(GameObject wire)
+    {
+        wire.transform.SetParent(_manager.elementsParent);
     }
 
     private IEnumerator BlinkPointer(Sprite blinkPointer)

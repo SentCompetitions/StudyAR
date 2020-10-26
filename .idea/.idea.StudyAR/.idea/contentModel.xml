@@ -261,6 +261,9 @@
               </e>
               <e p="Battery.cs" t="Include" />
               <e p="Led.cs" t="Include" />
+              <e p="Wire" t="Include">
+                <e p="Wire.cs" t="Include" />
+              </e>
             </e>
             <e p="Experience.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
