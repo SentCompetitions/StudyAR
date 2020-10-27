@@ -292,7 +292,6 @@ public class Player : NetworkBehaviour
             Debug.Log("De");
             foreach (Transform t in UI.transform)
             {
-                Debug.Log(t.gameObject.name);
                 if (t.gameObject.name == "Wireicon") Destroy(t.gameObject);
             }
         }

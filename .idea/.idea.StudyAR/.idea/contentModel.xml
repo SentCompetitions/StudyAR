@@ -295,6 +295,7 @@
           </e>
           <e p="Menu" t="Include">
             <e p="Menu.cs" t="Include" />
+            <e p="SettingsSetter.cs" t="Include" />
           </e>
         </e>
         <e p="ScriptTemplates" t="Include">

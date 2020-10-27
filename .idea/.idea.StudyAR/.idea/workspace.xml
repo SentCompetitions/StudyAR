@@ -25,29 +25,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="Update Unity">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/+.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/+.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/-.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/-.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/WirePortIcon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons/WirePortIcon.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu-ToSettings.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu-ToSettings.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/back - 180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Menu/back - 180.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Icons.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/Main/MainTarget_scaled.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/Main/MainTarget_scaled.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Menu/Menu-ToGame.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu-ToGame.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.dat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.dat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.xml.meta" afterDir="false" />
+    </list>
+    <list id="a8b7b619-1b61-4caf-9a8a-d396d0703f78" name="Ground Plane" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/Main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,16 +61,27 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Experience.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Editor/Vuforia/ImageTargetTextures/Main/MainTarget_scaled.jpg.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Menu/Menu.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Editor/Vuforia/ImageTargetTextures/Main/MainTarget_scaled.jpg.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/StreamingAssets/Vuforia/Main.xml.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Battery.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Menu/Menu.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Led.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Experience.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Wire/Wire.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Menu/Menu.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5506FD15-1A9B-48FC-B0AE-1883B1A23AE0/55/d0c265bc/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Player/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5506FD15-1A9B-48FC-B0AE-1883B1A23AE0/55/d0c265bc/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Resistor.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Player/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/StreamingAssets/Vuforia/Main.dat.meta" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -91,9 +104,10 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/UI/UpdatePointer.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/TouchInputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/WirePortIcon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" />
       </list>
     </option>
   </component>
@@ -149,6 +163,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="" />
+      <changelist id="a8b7b619-1b61-4caf-9a8a-d396d0703f78" name="Ground Plane" comment="" />
       <created>1603303296899</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -165,7 +180,7 @@
       <workItem from="1603645879347" duration="51000" />
       <workItem from="1603645958866" duration="8541000" />
       <workItem from="1603685764806" duration="16699000" />
-      <workItem from="1603801162049" duration="9108000" />
+      <workItem from="1603801162049" duration="18092000" />
     </task>
     <task id="LOCAL-00001" summary="Update Unity">
       <created>1603303408014</created>
@@ -230,7 +245,28 @@
       <option name="project" value="LOCAL" />
       <updated>1603807409002</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add wireport icons">
+      <created>1603811983094</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603811983094</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add wireport icons">
+      <created>1603811999793</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603811999794</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Ground Plane">
+      <created>1603832699648</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603832699648</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,13 +301,18 @@
     <MESSAGE value="Outline for elements" />
     <MESSAGE value="Change marker" />
     <MESSAGE value="Add wireport icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add wireport icons" />
+    <MESSAGE value="Ground Plane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ground Plane" />
   </component>
   <component name="WindowStateProjectService">
     <state x="715" y="142" key="#xdebugger.evaluate" timestamp="1603726884400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="142" key="#xdebugger.evaluate/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603726884400" />
+    <state x="523" y="24" key="CommitChangelistDialog2" timestamp="1603832699663">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="523" y="24" key="CommitChangelistDialog2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603832699663" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603808423086">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -368,11 +409,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="652" y="278" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464684602" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603807412003">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603812009061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="248" y="26" key="Vcs.Push.Dialog.v2/0.0.1064.560@0.0.1064.560" timestamp="1603636365934" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603807412003" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603812009061" />
     <state x="741" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603642777149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -381,5 +422,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="677" y="151" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603542183475" />
+    <state x="260" y="267" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1603833196810">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="260" y="267" key="vcs.ApplyPatchDifferentiatedDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603833196810" />
   </component>
 </project>
