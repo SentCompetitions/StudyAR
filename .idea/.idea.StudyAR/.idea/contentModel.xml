@@ -246,6 +246,18 @@
           </e>
           <e p="version.txt" t="Include" />
         </e>
+        <e p="OutlineEffect" t="Include">
+          <e p="OutlineEffect" t="Include">
+            <e p="LinkedSet.cs" t="Include" />
+            <e p="Outline.cs" t="Include" />
+            <e p="OutlineEffect.cs" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="OutlineBufferShader.shader" t="Include" />
+              <e p="OutlineShader.shader" t="Include" />
+            </e>
+          </e>
+          <e p="OutlineEffect.asmdef" t="Include" />
+        </e>
         <e p="Resources" t="Include">
           <e p="Fonts" t="Include">
             <e p="OFL.txt" t="Include" />
@@ -309,6 +321,7 @@
       <e p="Mirror.Websocket.csproj" t="IncludeRecursive" />
       <e p="Ninja.WebSockets.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
+      <e p="OEBIF.csproj" t="IncludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="StudyAR.sln" t="IncludeFlat" />
       <e p="Telepathy.csproj" t="IncludeRecursive" />

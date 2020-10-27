@@ -50,6 +50,8 @@ public class Player : NetworkBehaviour
         }
     }
 
+    private Element _oldElement;
+
     private void Start()
     {
         if (isLocalPlayer)
@@ -101,10 +103,23 @@ public class Player : NetworkBehaviour
     {
         if (phase == TouchPhase.Began || phase == TouchPhase.Ended && !_isHold && _clickTime != 0f) _clickTime = Time.time;
 
+        var e = GetElement();
+        if (e)
+        {
+            if (_oldElement) {
+                _oldElement.GetComponentInChildren<cakeslice.Outline>().enabled = false;
+            }
+            _oldElement = e;
+            e.GetComponentInChildren<cakeslice.Outline>().enabled = true;
+        }
+        else if (_oldElement)
+        {
+            _oldElement.GetComponentInChildren<cakeslice.Outline>().enabled = false;
+            _oldElement = null;
+        }
+
         if (Time.time - _clickTime < timeForClick && phase == TouchPhase.Ended)
         {
-            var e = GetElement();
-
             if (selectedWirePort.Equals(default(WirePort)))
             {
                 if (e && !UI.GetComponent<Animator>().GetBool("Connect"))
@@ -183,7 +198,6 @@ public class Player : NetworkBehaviour
 
             if (phase == TouchPhase.Began && selectedWirePort.Equals(default(WirePort)))
             {
-                var e = GetElement();
                 if (e)
                 {
                     grabbedElement = e;

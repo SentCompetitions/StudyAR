@@ -42,7 +42,6 @@ public class Wire : NetworkBehaviour
         transform.LookAt(pos2);
 
         float dist = Vector3.Distance(pos1, pos2);
-        Debug.Log(dist);
         transform.localScale = new Vector3(1f,1f, dist*5);
         transform.position += transform.forward * dist/2;
     }
