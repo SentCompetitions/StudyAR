@@ -272,6 +272,9 @@
                 <e p="Element.cs" t="Include" />
               </e>
               <e p="Battery.cs" t="Include" />
+              <e p="Icons" t="Include">
+                <e p="WirePortIcon.cs" t="Include" />
+              </e>
               <e p="Led.cs" t="Include" />
               <e p="Wire" t="Include">
                 <e p="Wire.cs" t="Include" />

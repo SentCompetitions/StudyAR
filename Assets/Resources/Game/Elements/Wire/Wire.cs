@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Mirror;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Wire : NetworkBehaviour
 {
     [Header("Color setting")]
-    public WireColor[] colors;
+    public WireSettings[] wireSettings;
     [Header("Debug (ReadOnly)")]
     [SyncVar(hook = nameof(SetWirePort1))]
     public WirePort wirePort1;
@@ -18,7 +19,7 @@ public class Wire : NetworkBehaviour
     void Start()
     {
         GetComponentInChildren<MeshRenderer>().material.color =
-            colors.ToList().Find(c => c.type == wirePort1.type).color;
+            wireSettings.ToList().Find(c => c.type == wirePort1.type).color;
     }
 
     void SetWirePort1(WirePort old, WirePort wirePort)
@@ -48,8 +49,9 @@ public class Wire : NetworkBehaviour
 }
 
 [Serializable]
-public struct WireColor
+public struct WireSettings
 {
     public string type;
     public Color color;
+    public Sprite icon;
 }

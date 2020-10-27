@@ -136,11 +136,13 @@ public class Player : NetworkBehaviour
                     UI.GetComponent<Animator>().SetBool("Connect", true);
                     NewPointer = selectPointer;
                     selectedElement = e;
+                    SetWirePortIcons(true);
                 }
                 else if (UI.GetComponent<Animator>().GetBool("Connect"))
                 {
                     UI.GetComponent<Animator>().SetBool("Connect", false);
                     NewPointer = selectPointer;
+                    SetWirePortIcons(false);
                 }
                 else
                 {
@@ -250,6 +252,7 @@ public class Player : NetworkBehaviour
     {
         CmdSpawnWire(from, to);
         UI.GetComponent<Animator>().SetBool("Connect", false);
+        SetWirePortIcons(false);
     }
 
     private void DestroyWithClose(GameObject o)
@@ -262,6 +265,37 @@ public class Player : NetworkBehaviour
     private void CmdDestroy(GameObject o)
     {
         NetworkServer.Destroy(o);
+    }
+
+    private void SetWirePortIcons(bool active)
+    {
+        if (active)
+        {
+            foreach (var element in FindObjectsOfType<Element>())
+            {
+                foreach (var elementWirePort in element.wirePorts)
+                {
+                    GameObject icon = new GameObject("Wireicon");
+                    icon.transform.SetParent(UI.transform);
+                    var image = icon.AddComponent<Image>();
+                    image.sprite = Array.Find(wirePrefab.GetComponent<Wire>().wireSettings,
+                            w => w.type == elementWirePort.type).icon;
+                    image.rectTransform.sizeDelta = new Vector2(20f, 20f);
+                    var script = icon.AddComponent<WirePortIcon>();
+                    script.mainCamera = mainCamera.GetComponent<Camera>();
+                    script.target = elementWirePort.wirePos;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("De");
+            foreach (Transform t in UI.transform)
+            {
+                Debug.Log(t.gameObject.name);
+                if (t.gameObject.name == "Wireicon") Destroy(t.gameObject);
+            }
+        }
     }
 
     [Command]
