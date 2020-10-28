@@ -14,6 +14,10 @@ public class SettingsSetter : MonoBehaviour
     public List<GameObject> targetMethod;
     public List<GameObject> planeMethod;
 
+    [Header("Scale")]
+    public Slider scaleSlider;
+    public Transform objectToScale;
+
     private List<Transform> _childs;
     void Start()
     {
@@ -21,35 +25,46 @@ public class SettingsSetter : MonoBehaviour
         foreach (Transform o in targetMethod.First().transform) _childs.Add(o);
 
         trackingMethod.value = PlayerPrefs.GetInt("TrackingMethod", 0);
+        ChangeTrackingMethod(PlayerPrefs.GetInt("TrackingMethod", 0));
 
-        Disable(targetMethod);
-        Disable(planeMethod);
+        scaleSlider.value = PlayerPrefs.GetFloat("Scale", 0.01f);
+        ChangeScale();
+    }
+
+    public void ChangeTrackingMethod(int method)
+    {
+        PlayerPrefs.SetInt("TrackingMethod", method);
+        PlayerPrefs.Save();
+
+        planeMethod.Last().SetActive(false);
+
         switch (PlayerPrefs.GetInt("TrackingMethod", 0))
         {
             case 0:
-                Enable(targetMethod);
                 SetParent(targetMethod.First().transform);
                 break;
             case 1:
-                Enable(planeMethod);
+                planeMethod.Last().SetActive(true);
                 SetParent(planeMethod.First().transform);
                 break;
         }
     }
 
-    public void ChangeTrackingMethod(int method)
+    private void SetParent(Transform t) => _childs.ForEach(c =>
     {
-        if (PlayerPrefs.GetInt("TrackingMethod", 0) != method)
+        foreach (Transform tr in _childs)
         {
-            PlayerPrefs.SetInt("TrackingMethod", method);
-            PlayerPrefs.Save();
-            Application.Quit();
+            tr.position = Vector3.zero;
+            tr.rotation = Quaternion.identity;
         }
+        c.SetParent(t);
+    });
+
+    public void ChangeScale()
+    {
+        PlayerPrefs.SetFloat("Scale", scaleSlider.value);
+        PlayerPrefs.Save();
+
+        objectToScale.localScale = new Vector3(scaleSlider.value, scaleSlider.value, scaleSlider.value);
     }
-
-    private void Disable(List<GameObject> gameObjects) => gameObjects.ForEach(g => g.SetActive(false));
-
-    private void Enable(List<GameObject> gameObjects) => gameObjects.ForEach(g => g.SetActive(true));
-
-    private void SetParent(Transform t) => _childs.ForEach(c => c.SetParent(t));
 }
