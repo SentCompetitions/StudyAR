@@ -307,6 +307,7 @@ public class Player : NetworkBehaviour
         wire.wirePort2 = to;
         NetworkServer.Spawn(obj);
         RpcSpawnWire(obj);
+        CircuitSimulation.UpdateSimulationEvent.Invoke();
     }
 
     [ClientRpc]
