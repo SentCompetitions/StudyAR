@@ -97,12 +97,17 @@ public class Player : NetworkBehaviour
                 if (hitGameObject.CompareTag("Platform"))
                 {
                     grabbedElement.transform.position = hit.point;
+
+                    if (!grabbedElement.transform.parent) return;
+                    if (!grabbedElement.transform.parent.gameObject.CompareTag("Point")) return;
+                    grabbedElement.GetComponentInParent<Point>().boundElem = null;
+
                     CmdSetParent(_manager.elementsParent.gameObject, grabbedElement.gameObject);
                 }
                 if (hitGameObject.CompareTag("Point"))
                 {
                     Point point = hitGameObject.GetComponent<Point>();
-                    if (point.boundElem)
+                    if (!point.boundElem)
                     {
                         grabbedElement.transform.position = hit.point;
                         point.boundElem = grabbedElement;
