@@ -25,8 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/ЕвГений/prog/StudyAR/Assets/Resources/Game/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Experience.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" root0="FORCE_HIGHLIGHTING" />
@@ -150,7 +150,7 @@
       <workItem from="1604044300429" duration="1026000" />
       <workItem from="1604052014510" duration="26000" />
       <workItem from="1604052069632" duration="20000" />
-      <workItem from="1604052116959" duration="9562000" />
+      <workItem from="1604052116959" duration="9894000" />
     </task>
     <task id="LOCAL-00001" summary="Update Unity">
       <created>1603303408014</created>
@@ -264,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604064154927</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Now only 1 elem can be at 1 point">
+      <created>1604065174757</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1604065174757</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +311,8 @@
     <MESSAGE value="Add revert an element to a point" />
     <MESSAGE value="Add point.ElemToCenter()" />
     <MESSAGE value="Fix Point.point.ElemToCenter()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Point.point.ElemToCenter()" />
+    <MESSAGE value="Now only 1 elem can be at 1 point" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now only 1 elem can be at 1 point" />
   </component>
   <component name="WindowStateProjectService">
     <state x="698" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1604052085087">
@@ -316,11 +324,11 @@
     </state>
     <state x="715" y="142" key="#xdebugger.evaluate/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603726884400" />
     <state x="715" y="142" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1604063886019" />
-    <state x="819" y="18" key="CommitChangelistDialog2" timestamp="1604064154466">
+    <state x="819" y="18" key="CommitChangelistDialog2" timestamp="1604065174212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="523" y="24" key="CommitChangelistDialog2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603832699663" />
-    <state x="819" y="18" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604064154466" />
+    <state x="819" y="18" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604065174212" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603808423086">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -434,12 +442,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="652" y="278" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464684602" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604064155892">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604065175833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="248" y="26" key="Vcs.Push.Dialog.v2/0.0.1064.560@0.0.1064.560" timestamp="1603636365934" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603833999786" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604064155892" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604065175833" />
     <state x="741" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603642777149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
