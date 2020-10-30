@@ -12,11 +12,13 @@ public class CircuitSimulation : MonoBehaviour
 
     private float allResistance;
     private List<Element> _elements;
+    private List<Element> _oldElements;
     private Battery source;
     void Start()
     {
         UpdateSimulationEvent = new UnityEvent();
         UpdateSimulationEvent.AddListener(UpdateSimulation);
+        _oldElements = new List<Element>();
     }
 
     private void UpdateSimulation()
@@ -76,14 +78,19 @@ public class CircuitSimulation : MonoBehaviour
             float apmerage = source.maxVoltage / allResistance;
             Debug.Log($"[CIRCUIT] Result resistance: {allResistance}");
             Debug.Log($"[CIRCUIT] Result amperage: {apmerage}");
-            _elements.ForEach(e => e.amperage = apmerage);
+            foreach (var e in _elements)
+            {
+                e.amperage = apmerage;
+                e.voltage = source.maxVoltage;
+            }
+            _oldElements = new List<Element>(_elements);
         }
         else
         {
-            foreach (var e in _elements)
+            foreach (var e in _oldElements)
             {
                 e.amperage = 0f;
-                e.voltage = source.maxVoltage;
+                e.voltage = 0f;
             }
         }
     }
