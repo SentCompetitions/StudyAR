@@ -25,13 +25,307 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="Update Unity">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Simulation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Simulation/CircuitSimulation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Simulation/CircuitSimulation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Attributes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Attributes/ColorCircularPickerAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Attributes/ColorCircularPickerAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Attributes/Texture3DPreviewAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Attributes/Texture3DPreviewAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Aura - Starting Guide.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Aura - Starting Guide.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/Aura.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/Aura.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/AuraLight.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/AuraLight.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/AuraVolume.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/AuraVolume.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/Buffers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/Buffers.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/CullableObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/CullableObject.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/DirectionalLightsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/DirectionalLightsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/DirectionalShadowDataCollector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/DirectionalShadowDataCollector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/Frustum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/Frustum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/FrustumSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/FrustumSettings.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/LightsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/LightsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/ObjectsCuller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/ObjectsCuller.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/PointLightsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/PointLightsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/ShadowmapsCollector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/ShadowmapsCollector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/SpotLightsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/SpotLightsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/SwappableRenderTexture.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/SwappableRenderTexture.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/Texture2DArrayComposer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/Texture2DArrayComposer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/VolumesManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/VolumesManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/VolumetricTexture.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/VolumetricTexture.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/VolumetricTextureArrayComposer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Classes/VolumetricTextureArrayComposer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Drawers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Drawers/ColorCircularPickerDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Drawers/ColorCircularPickerDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Drawers/Texture3DPreviewDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Drawers/Texture3DPreviewDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/AuraEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/AuraEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/AuraLightEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/AuraLightEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/AuraVolumeEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/AuraVolumeEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/CreateTexture3DAssetTool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/CreateTexture3DAssetTool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/Texture3DEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Editors/Texture3DEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Enums.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Enums/Texture3DReadingOrderEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Enums/Texture3DReadingOrderEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Extensions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Extensions/Texture3DExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Extensions/Texture3DExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Helpers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Helpers/GuiHelpers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Helpers/GuiHelpers.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Helpers/MeshHelpers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Helpers/MeshHelpers.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Helpers/PreviewRenderUtilityHelpers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Helpers/PreviewRenderUtilityHelpers.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Shaders/ColorFieldDrawerShader.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Shaders/ColorFieldDrawerShader.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Shaders/Texture3DPreviewShader.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Shaders/Texture3DPreviewShader.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Statics.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Statics/GuiStyles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Editor/Statics/GuiStyles.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/FrustumParametersEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/FrustumParametersEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/OcclusionCullingAccuracyEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/OcclusionCullingAccuracyEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/VolumeTypeEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/VolumeTypeEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/VolumetricTextureFilterModeEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/VolumetricTextureFilterModeEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/VolumetricTextureWrapModeEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Enums/VolumetricTextureWrapModeEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/CameraExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/CameraExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/FloatExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/FloatExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/FrustumParametersEnumExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/FrustumParametersEnumExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/Gaia.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/Gaia/GaiaExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/Gaia/GaiaExtension.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/GenericExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/GenericExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/IntExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/IntExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/Matrix4x4Extensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/Matrix4x4Extensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/RenderTextureExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/RenderTextureExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/StringExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/StringExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/Vector3Extensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/Vector3Extensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/Vector4Extensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Extensions/Vector4Extensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/License.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/License/AuraLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/License/AuraLogo.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/License/license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/License/license.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Meshes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Meshes/Sphere.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Meshes/Sphere.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Scripts/GenerateComputeShaderKernelVariants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Scripts/GenerateComputeShaderKernelVariants.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Aura.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Aura.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/ComputeAccumulationComputeShader.compute" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/ComputeAccumulationComputeShader.compute.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/ComputeDataComputeShader.compute" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/ComputeDataComputeShader.compute.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/ComputeMaximumDepthComputeShader.compute" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/ComputeMaximumDepthComputeShader.compute.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/DirectionalLightInjection.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/DirectionalLightInjection.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/OcclusionCulling.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/OcclusionCulling.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/PointLightInjection.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/PointLightInjection.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/SpotLightInjection.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/SpotLightInjection.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/TemporalReprojection.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/TemporalReprojection.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/VolumeInjection.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/ComputeShaders/Includes/VolumeInjection.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/AuraParticlesBase.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/AuraParticlesBase.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/AuraParticlesUsage.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/AuraParticlesUsage.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/AuraUsage.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/AuraUsage.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/BlueNoise.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/BlueNoise.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/Common.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/Common.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/CommonFunctions.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/CommonFunctions.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/CommonVariables.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/CommonVariables.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/Noise.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/Noise.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/Structs.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Includes/Structs.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/BuiltinReplacement.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/BuiltinReplacement/BillboardTree.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/BuiltinReplacement/BillboardTree.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Particles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Particles/AuraParticlesAdditive.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Particles/AuraParticlesAdditive.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Particles/AuraParticlesAlphaBlend.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Particles/AuraParticlesAlphaBlend.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Particles/AuraParticlesBlendAdd.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Particles/AuraParticlesBlendAdd.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/PostProcessShader.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/PostProcessShader.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/ProcessOcclusionTextureShader.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/ProcessOcclusionTextureShader.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/StoreDirectionalSpotLightCookieMap.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/StoreDirectionalSpotLightCookieMap.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/StorePointLightCookieMap.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/StorePointLightCookieMap.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/StorePointLightShadowMap.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/StorePointLightShadowMap.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/StoreShadowDataShader.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/StoreShadowDataShader.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Surface.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Surface/AuraStandardAlphaBlended.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Shaders/Shaders/Surface/AuraStandardAlphaBlended.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Statics.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Statics/CustomGizmo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Statics/CustomGizmo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Statics/FrustumCorners.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Statics/FrustumCorners.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/DirectionalLightParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/DirectionalLightParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/DynamicNoiseParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/DynamicNoiseParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/FrustumSettingsParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/FrustumSettingsParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/LevelsParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/LevelsParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/MatrixFloats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/MatrixFloats.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/PointLightParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/PointLightParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/SpotLightParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/SpotLightParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/TransformParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/TransformParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeDynamicNoiseData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeDynamicNoiseData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeGradient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeGradient.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeInjectionColorParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeInjectionColorParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeInjectionCommonParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeInjectionCommonParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeInjectionParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeInjectionParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeInjectionShape.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeInjectionShape.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeLevelsData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeLevelsData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeTextureData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Structs/VolumeTextureData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/BlueNoiseTexture_Texture2DArray.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/BlueNoiseTexture_Texture2DArray.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/AdditionalSettingsIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/AdditionalSettingsIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/AnisotropyIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/AnisotropyIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/AuraLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/AuraLogo.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/AuraLogoIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/AuraLogoIcon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/BaseInjectionIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/BaseInjectionIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/ColorIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/ColorIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/DensityIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/DensityIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/ExperimentalIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/ExperimentalIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/GridSettingsIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/GridSettingsIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/InformationIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/InformationIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/InjectionContributionIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/InjectionContributionIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/InjectionIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/InjectionIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/LightIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/LightIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/NoiseMaskIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/NoiseMaskIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/SettingsIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/SettingsIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/ShapeIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/ShapeIcon.psd.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/TextureMaskIcon.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Aura/Textures/Icons/TextureMaskIcon.psd.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Ground_Plane.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Ground_Plane.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_17_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_17_49__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_22_03__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_22_03__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2020_15_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2020_15_12__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_27_10_2020_17_23__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_27_10_2020_17_23__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Resistor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Simulation/CircuitSimulation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Simulation/CircuitSimulation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Menu/Menu.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,35 +333,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Menu/Menu.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Battery.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Menu/Menu.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Led.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Player/Player.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Wire/Wire.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Battery.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/StreamingAssets/Vuforia/Main.dat.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Simulation/CircuitSimulation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Experience.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Editor/Vuforia/ImageTargetTextures/Main/MainTarget_scaled.jpg.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Editor/Vuforia/ImageTargetTextures/Main/MainTarget_scaled.jpg.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/StreamingAssets/Vuforia/Main.xml.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Led.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Player/Player.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5506FD15-1A9B-48FC-B0AE-1883B1A23AE0/55/d0c265bc/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Elements/Resistor.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Programming/Unity/StudyAR/Assets/Resources/Game/Player/Player.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Experience.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -81,19 +369,23 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/EnergyElement.cs" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IEnergyElement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/CustomNetworkManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scenes/Main.unity" />
         <option value="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/UI/UpdatePointer.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/TouchInputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/WirePortIcon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IEnergyStorage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IElectronSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Electron.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IEnergySource.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Simulation/CircuitSimulation.cs" />
       </list>
     </option>
@@ -110,12 +402,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35010824" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29978356" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -136,10 +430,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21388">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="21388" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -150,7 +444,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="" />
-      <changelist id="" name="Ground Plane" comment="" />
       <created>1603303296899</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -168,6 +461,9 @@
       <workItem from="1603645958866" duration="8541000" />
       <workItem from="1603685764806" duration="16699000" />
       <workItem from="1603801162049" duration="27593000" />
+      <workItem from="1603977617793" duration="2726000" />
+      <workItem from="1603989399074" duration="1721000" />
+      <workItem from="1604043389820" duration="19864000" />
     </task>
     <task id="LOCAL-00001" summary="Update Unity">
       <created>1603303408014</created>
@@ -308,10 +604,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="Scale setting and fix trackers setting" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="715" y="142" key="#xdebugger.evaluate" timestamp="1603726884400">
+    <state x="1069" y="184" width="490" height="723" key="#xdebugger.evaluate" timestamp="1604067301811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="142" key="#xdebugger.evaluate/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603726884400" />
+    <state x="1069" y="184" width="490" height="723" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1604067301811" />
     <state x="523" y="24" key="CommitChangelistDialog2" timestamp="1603832699663">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -320,70 +617,94 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603808423086" />
-    <state width="1879" height="342" key="GridCell.Tab.0.bottom" timestamp="1603731225602">
+    <state x="688" y="439" key="GitCloneDialog" timestamp="1603990581503">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="688" y="439" key="GitCloneDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603990581503" />
+    <state width="1879" height="367" key="GridCell.Tab.0.bottom" timestamp="1604067022562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.0.center" timestamp="1603731225602">
+    <state width="1879" height="367" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022562" />
+    <state width="1879" height="367" key="GridCell.Tab.0.center" timestamp="1604067022562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.0.center/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.0.left" timestamp="1603731225602">
+    <state width="1879" height="367" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022562" />
+    <state width="1879" height="367" key="GridCell.Tab.0.left" timestamp="1604067022562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.0.left/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.0.right" timestamp="1603731225602">
+    <state width="1879" height="367" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022562" />
+    <state width="1879" height="367" key="GridCell.Tab.0.right" timestamp="1604067022562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.0.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.1.bottom" timestamp="1603731225602">
+    <state width="1879" height="367" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022562" />
+    <state width="1879" height="367" key="GridCell.Tab.1.bottom" timestamp="1604067054723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.1.center" timestamp="1603731225602">
+    <state width="1879" height="367" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604067054723" />
+    <state width="1879" height="367" key="GridCell.Tab.1.center" timestamp="1604067054723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.1.center/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.1.left" timestamp="1603731225602">
+    <state width="1879" height="367" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604067054723" />
+    <state width="1879" height="367" key="GridCell.Tab.1.left" timestamp="1604067054723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.1.left/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.1.right" timestamp="1603731225602">
+    <state width="1879" height="367" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604067054723" />
+    <state width="1879" height="367" key="GridCell.Tab.1.right" timestamp="1604067054723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.1.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.2.bottom" timestamp="1603731225603">
+    <state width="1879" height="367" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604067054723" />
+    <state width="1879" height="367" key="GridCell.Tab.2.bottom" timestamp="1604067022425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225603" />
-    <state width="1879" height="342" key="GridCell.Tab.2.center" timestamp="1603731225603">
+    <state width="1879" height="367" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022425" />
+    <state width="1879" height="367" key="GridCell.Tab.2.center" timestamp="1604067022425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.2.center/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225603" />
-    <state width="1879" height="342" key="GridCell.Tab.2.left" timestamp="1603731225603">
+    <state width="1879" height="367" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022425" />
+    <state width="1879" height="367" key="GridCell.Tab.2.left" timestamp="1604067022425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.2.left/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225603" />
-    <state width="1879" height="342" key="GridCell.Tab.2.right" timestamp="1603731225603">
+    <state width="1879" height="367" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022425" />
+    <state width="1879" height="367" key="GridCell.Tab.2.right" timestamp="1604067022425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.2.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225603" />
-    <state width="1879" height="342" key="GridCell.Tab.3.bottom" timestamp="1603731225604">
+    <state width="1879" height="367" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022425" />
+    <state width="1879" height="367" key="GridCell.Tab.3.bottom" timestamp="1604067022426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.3.bottom/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225604" />
-    <state width="1879" height="342" key="GridCell.Tab.3.center" timestamp="1603731225603">
+    <state width="1879" height="367" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022426" />
+    <state width="1879" height="367" key="GridCell.Tab.3.center" timestamp="1604067022425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.3.center/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225603" />
-    <state width="1879" height="342" key="GridCell.Tab.3.left" timestamp="1603731225603">
+    <state width="1879" height="367" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022425" />
+    <state width="1879" height="367" key="GridCell.Tab.3.left" timestamp="1604067022425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.3.left/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225603" />
-    <state width="1879" height="342" key="GridCell.Tab.3.right" timestamp="1603731225603">
+    <state width="1879" height="367" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022425" />
+    <state width="1879" height="367" key="GridCell.Tab.3.right" timestamp="1604067022425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.3.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225603" />
+    <state width="1879" height="367" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604067022425" />
+    <state x="540" y="256" width="839" height="529" key="IDE.errors.dialog" timestamp="1604045206273">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="256" width="839" height="529" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604045206273" />
     <state x="184" y="86" key="MergeDialog" timestamp="1603464765338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -396,10 +717,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="717" y="139" key="RollbackChangesDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603808167457" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1603645910746">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1604044087688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603645910746" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604044087688" />
     <state x="602" y="135" key="VCS.ChangeListViewerDialog" timestamp="1603464690856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -429,5 +751,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="260" y="267" key="vcs.ApplyPatchDifferentiatedDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603833196810" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Frame#CircuitSimulation.StepInto" memberName="sub" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\neisv\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\neisv\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_StudyAR.-613968446.00" t="ExcludeRecursive" />
-    <e p="C:\Users\neisv\AppData\Roaming\JetBrains\Rider2020.2\scratches" t="IncludeRecursive" />
-    <e p="D:\Programming\Unity\StudyAR" t="IncludeRecursive">
+    <e p="C:\Users\neisv\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_StudyAR.-1004048697.00" t="ExcludeRecursive" />
+    <e p="C:\Users\neisv\Documents\Unity\StudyAR" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Editor" t="Include">

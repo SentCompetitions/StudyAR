@@ -127,13 +127,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  resistance: 0
   wirePorts:
   - type: +
+    way: +
     wirePos: {fileID: 2211287340305351695}
     element: {fileID: 0}
   - type: '-'
+    way: 
     wirePos: {fileID: 4102542499728019145}
     element: {fileID: 0}
+  amperage: 0
+  maxAmperage: 2
+  maxVoltage: 12
 --- !u!135 &3847609215636748556
 SphereCollider:
   m_ObjectHideFlags: 0

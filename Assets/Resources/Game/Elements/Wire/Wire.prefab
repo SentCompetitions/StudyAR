@@ -49,19 +49,19 @@ MonoBehaviour:
   syncInterval: 1
   wireSettings:
   - type: +
-    color: {r: 1, g: 0, b: 0, a: 0}
+    color: {r: 0.95686275, g: 0.2627451, b: 0.21176471, a: 0}
     icon: {fileID: 21300000, guid: 3723c458d824e7b499feb76ba19a5a41, type: 3}
   - type: '-'
-    color: {r: 0, g: 0.016457386, b: 0.6226415, a: 0}
+    color: {r: 0.12941177, g: 0.5882353, b: 0.9529412, a: 0}
     icon: {fileID: 21300000, guid: e013a0cf72de1f047be96fbd343761c7, type: 3}
   - type: 1
-    color: {r: 0.97802067, g: 1, b: 0, a: 0}
+    color: {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 0}
     icon: {fileID: 21300000, guid: 2f81694029c977848a8b92ccb074d51d, type: 3}
   - type: 2
-    color: {r: 0.07360857, g: 0.5283019, b: 0, a: 0}
+    color: {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 0}
     icon: {fileID: 21300000, guid: f0a8ac5d0c422b841b8b1bfb834423ce, type: 3}
   - type: 3
-    color: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 0}
+    color: {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 0}
     icon: {fileID: 21300000, guid: 3dc9685248a57e04f8bd657f79b2a502, type: 3}
   wirePort1:
     type: 

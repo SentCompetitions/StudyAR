@@ -259,12 +259,24 @@ public class Player : NetworkBehaviour
     {
         UI.GetComponent<Animator>().SetBool("Connect", false);
         CmdDestroy(o);
+        SetWirePortIcons(false);
     }
 
     [Command]
     private void CmdDestroy(GameObject o)
     {
         NetworkServer.Destroy(o);
+        StartCoroutine(WaitDestroy(o));
+    }
+
+    private IEnumerator WaitDestroy(GameObject gameObject)
+    {
+        while (gameObject)
+        {
+            Debug.Log($"[SERVER] Wait for {gameObject} destroy");
+            yield return new WaitForEndOfFrame();
+        }
+        CircuitSimulation.UpdateSimulationEvent.Invoke();
     }
 
     private void SetWirePortIcons(bool active)
@@ -289,7 +301,6 @@ public class Player : NetworkBehaviour
         }
         else
         {
-            Debug.Log("De");
             foreach (Transform t in UI.transform)
             {
                 if (t.gameObject.name == "Wireicon") Destroy(t.gameObject);
@@ -306,8 +317,9 @@ public class Player : NetworkBehaviour
         wire.wirePort1 = from;
         wire.wirePort2 = to;
         NetworkServer.Spawn(obj);
-        RpcSpawnWire(obj);
+        Debug.Log("Need to update");
         CircuitSimulation.UpdateSimulationEvent.Invoke();
+        RpcSpawnWire(obj);
     }
 
     [ClientRpc]

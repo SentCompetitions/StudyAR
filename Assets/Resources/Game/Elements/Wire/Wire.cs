@@ -46,6 +46,13 @@ public class Wire : NetworkBehaviour
         transform.localScale = new Vector3(1f,1f, dist*500);
         transform.position += transform.forward * dist/2;
     }
+
+    public WirePort GetAnother(WirePort wirePort)
+    {
+        if (wirePort.element.Equals(wirePort1.element)) return wirePort2;
+        if (wirePort.element.Equals(wirePort2.element)) return wirePort1;
+        return default;
+    }
 }
 
 [Serializable]
