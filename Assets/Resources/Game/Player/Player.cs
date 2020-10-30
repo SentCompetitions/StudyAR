@@ -346,10 +346,9 @@ public class Player : NetworkBehaviour
         {
             GameObject elementPrefab = _manager.experience.AllElements[i];
             GameObject obj = Instantiate(elementPrefab);
-            obj.transform.position =
-                _manager.elementsSpawnPoints[i].position - elementPrefab.transform.GetChild(0).position;
             Point point = _manager.elementsSpawnPoints[i].GetComponent<Point>();
             point.boundElem = obj.GetComponent<Element>();
+            point.ElemToCenter();
             NetworkServer.Spawn(obj);
             RpcSetParent(_manager.elementsSpawnPoints[i].gameObject,obj);
         }

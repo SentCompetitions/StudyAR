@@ -6,7 +6,7 @@ using UnityEngine;
 
         public void ElemToCenter()
         {
-            if (boundElem) boundElem.transform.position = this.transform.position; // хз что отнимать
+            if (boundElem) boundElem.transform.position = transform.position - boundElem.transform.GetChild(0).localPosition / 100;
             else Debug.LogError("BoundElem is null! (Point.cs ElemToCenter())");
         }
     }

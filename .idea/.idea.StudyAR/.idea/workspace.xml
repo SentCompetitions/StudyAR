@@ -39,13 +39,16 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Experience.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -114,10 +117,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11988">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="11988" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -148,7 +151,7 @@
       <workItem from="1604044300429" duration="1026000" />
       <workItem from="1604052014510" duration="26000" />
       <workItem from="1604052069632" duration="20000" />
-      <workItem from="1604052116959" duration="7484000" />
+      <workItem from="1604052116959" duration="8693000" />
     </task>
     <task id="LOCAL-00001" summary="Update Unity">
       <created>1603303408014</created>
@@ -248,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604060221884</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add point.ElemToCenter()">
+      <created>1604062824784</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1604062824784</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,58 +296,68 @@
     <MESSAGE value="Ground Plane" />
     <MESSAGE value="Ground plane and settings menu logic" />
     <MESSAGE value="Add revert an element to a point" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add revert an element to a point" />
+    <MESSAGE value="Add point.ElemToCenter()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add point.ElemToCenter()" />
   </component>
   <component name="WindowStateProjectService">
     <state x="698" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1604052085087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="698" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604052085087" />
-    <state x="715" y="142" key="#xdebugger.evaluate" timestamp="1603726884400">
+    <state x="715" y="142" key="#xdebugger.evaluate" timestamp="1604063886019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="142" key="#xdebugger.evaluate/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603726884400" />
-    <state x="602" y="18" key="CommitChangelistDialog2" timestamp="1604060221192">
+    <state x="715" y="142" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1604063886019" />
+    <state x="819" y="18" key="CommitChangelistDialog2" timestamp="1604064050483">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="523" y="24" key="CommitChangelistDialog2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603832699663" />
-    <state x="602" y="18" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604060221192" />
+    <state x="819" y="18" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604064050483" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603808423086">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603808423086" />
-    <state width="1879" height="342" key="GridCell.Tab.0.bottom" timestamp="1603731225602">
+    <state width="1877" height="342" key="GridCell.Tab.0.bottom" timestamp="1604063624444">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.0.center" timestamp="1603731225602">
+    <state width="1877" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604063624444" />
+    <state width="1877" height="342" key="GridCell.Tab.0.center" timestamp="1604063624443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.0.center/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.0.left" timestamp="1603731225602">
+    <state width="1877" height="342" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604063624443" />
+    <state width="1877" height="342" key="GridCell.Tab.0.left" timestamp="1604063624443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.0.left/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.0.right" timestamp="1603731225602">
+    <state width="1877" height="342" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604063624443" />
+    <state width="1877" height="342" key="GridCell.Tab.0.right" timestamp="1604063624443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.0.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.1.bottom" timestamp="1603731225602">
+    <state width="1877" height="342" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604063624443" />
+    <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1604063767066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.1.center" timestamp="1603731225602">
+    <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604063767066" />
+    <state width="1877" height="342" key="GridCell.Tab.1.center" timestamp="1604063767065">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.1.center/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.1.left" timestamp="1603731225602">
+    <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604063767065" />
+    <state width="1877" height="342" key="GridCell.Tab.1.left" timestamp="1604063767065">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.1.left/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
-    <state width="1879" height="342" key="GridCell.Tab.1.right" timestamp="1603731225602">
+    <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604063767065" />
+    <state width="1877" height="342" key="GridCell.Tab.1.right" timestamp="1604063767066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="342" key="GridCell.Tab.1.right/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603731225602" />
+    <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604063767066" />
     <state width="1879" height="342" key="GridCell.Tab.2.bottom" timestamp="1603731225603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -399,12 +419,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="652" y="278" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464684602" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604060608665">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604062826098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="248" y="26" key="Vcs.Push.Dialog.v2/0.0.1064.560@0.0.1064.560" timestamp="1603636365934" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603833999786" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604060608665" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604062826098" />
     <state x="741" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603642777149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -417,5 +437,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="260" y="267" key="vcs.ApplyPatchDifferentiatedDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603833196810" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="boundElem.transform.GetChild(0).position" language="C#" />
+        <watch expression="transform.position" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
