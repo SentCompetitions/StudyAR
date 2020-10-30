@@ -275,6 +275,9 @@
                 <e p="WirePortIcon.cs" t="Include" />
               </e>
               <e p="Led.cs" t="Include" />
+              <e p="Simulation" t="Include">
+                <e p="CircuitSimulation.cs" t="Include" />
+              </e>
               <e p="Wire" t="Include">
                 <e p="Wire.cs" t="Include" />
               </e>

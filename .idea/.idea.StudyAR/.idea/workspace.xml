@@ -33,6 +33,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -61,16 +66,19 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/EnergyElement.cs" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IEnergyElement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Led.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/CustomNetworkManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scenes/Main.unity" />
         <option value="$PROJECT_DIR$/Assets/Resources/Menu/Menu.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/UI/UpdatePointer.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/TouchInputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Element.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/WirePortIcon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IEnergyStorage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IElectronSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/Electron.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Base/IEnergySource.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Battery.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.cs" />
@@ -90,12 +98,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35010824" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29978356" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Python" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -421,7 +431,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="582" y="274" key="MultipleFileMergeDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603542242515" />
-    <state x="717" y="139" key="RollbackChangesDialog" timestamp="1603808167457">
+    <state x="717" y="139" key="RollbackChangesDialog" timestamp="1604071338063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="717" y="139" key="RollbackChangesDialog/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603808167457" />

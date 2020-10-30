@@ -111,13 +111,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  resistance: 2000
   wirePorts:
   - type: 1
+    way: 2
     wirePos: {fileID: 5761021910308725664}
     element: {fileID: 0}
   - type: 2
+    way: 1
     wirePos: {fileID: 5176904302177664770}
     element: {fileID: 0}
+  amperage: 0
 --- !u!135 &5232890765749402766
 SphereCollider:
   m_ObjectHideFlags: 0

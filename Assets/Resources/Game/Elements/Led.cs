@@ -7,5 +7,12 @@ using UnityEngine.UI;
 
 public class Led : Element
 {
+    [Header("Led")]
+    public GameObject lightObject;
 
+    void Update()
+    {
+        float intensity = amperage * voltage / maxAllowedPower * 5;
+        lightObject.transform.localScale = new Vector3(intensity, intensity, intensity);
+    }
 }
