@@ -107,6 +107,7 @@ public class Player : NetworkBehaviour
                         grabbedElement.transform.position = hit.point;
                         point.boundElem = grabbedElement;
                         CmdSetParent(hitGameObject, grabbedElement.gameObject);
+                        point.ElemToCenter();
                     }
                 }
 
@@ -347,7 +348,8 @@ public class Player : NetworkBehaviour
             GameObject obj = Instantiate(elementPrefab);
             obj.transform.position =
                 _manager.elementsSpawnPoints[i].position - elementPrefab.transform.GetChild(0).position;
-            _manager.elementsSpawnPoints[i].GetComponent<Point>().boundElem = obj.GetComponent<Element>();
+            Point point = _manager.elementsSpawnPoints[i].GetComponent<Point>();
+            point.boundElem = obj.GetComponent<Element>();
             NetworkServer.Spawn(obj);
             RpcSetParent(_manager.elementsSpawnPoints[i].gameObject,obj);
         }

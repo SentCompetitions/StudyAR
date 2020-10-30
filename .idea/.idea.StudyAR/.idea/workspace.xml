@@ -24,24 +24,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="Update Unity">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Ground_Plane.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Ground_Plane.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_17_49__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_17_49__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_22_03__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_22_03__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2020_15_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2020_15_12__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_27_10_2020_17_23__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/shelf/Uncommitted_changes_before_Update_at_27_10_2020_17_23__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="18b19dfd-b0e1-4727-bf5f-7faceeec8004" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StudyAR/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +71,8 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/WirePortIcon.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Elements/Wire/Wire.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Menu/SettingsSetter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Game/Scene/Point.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Game/Player/Player.cs" />
       </list>
     </option>
   </component>
@@ -162,7 +148,7 @@
       <workItem from="1604044300429" duration="1026000" />
       <workItem from="1604052014510" duration="26000" />
       <workItem from="1604052069632" duration="20000" />
-      <workItem from="1604052116959" duration="4889000" />
+      <workItem from="1604052116959" duration="7484000" />
     </task>
     <task id="LOCAL-00001" summary="Update Unity">
       <created>1603303408014</created>
@@ -255,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603833998521</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add revert an element to a point">
+      <created>1604060221884</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604060221884</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +285,8 @@
     <MESSAGE value="Add wireport icons" />
     <MESSAGE value="Ground Plane" />
     <MESSAGE value="Ground plane and settings menu logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ground plane and settings menu logic" />
+    <MESSAGE value="Add revert an element to a point" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add revert an element to a point" />
   </component>
   <component name="WindowStateProjectService">
     <state x="698" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1604052085087">
@@ -303,11 +297,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="142" key="#xdebugger.evaluate/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603726884400" />
-    <state x="523" y="18" key="CommitChangelistDialog2" timestamp="1604060160453">
+    <state x="602" y="18" key="CommitChangelistDialog2" timestamp="1604060221192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="523" y="24" key="CommitChangelistDialog2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603832699663" />
-    <state x="523" y="18" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604060160453" />
+    <state x="602" y="18" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604060221192" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603808423086">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -405,12 +399,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="652" y="278" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603464684602" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604060119361">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604060608665">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="248" y="26" key="Vcs.Push.Dialog.v2/0.0.1064.560@0.0.1064.560" timestamp="1603636365934" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.252.1600.860@0.0.1920.1040" timestamp="1603833999786" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604060119361" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604060608665" />
     <state x="741" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603642777149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
