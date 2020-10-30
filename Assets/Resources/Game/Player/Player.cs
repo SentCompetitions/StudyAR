@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using Mirror;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Color = UnityEngine.Color;
 using Object = System.Object;
 
 public class Player : NetworkBehaviour
@@ -91,10 +93,23 @@ public class Player : NetworkBehaviour
             RaycastHit[] hits = Physics.RaycastAll(mainCamera.transform.position, mainCamera.transform.forward);
             foreach (var hit in hits)
             {
-                if (hit.transform.gameObject.CompareTag("Platform"))
+                GameObject hitGameObject = hit.transform.gameObject;
+                if (hitGameObject.CompareTag("Platform"))
                 {
                     grabbedElement.transform.position = hit.point;
+                    CmdSetParent(_manager.elementsParent.gameObject, grabbedElement.gameObject);
                 }
+                if (hitGameObject.CompareTag("Point"))
+                {
+                    Point point = hitGameObject.GetComponent<Point>();
+                    if (point.boundElem)
+                    {
+                        grabbedElement.transform.position = hit.point;
+                        point.boundElem = grabbedElement;
+                        CmdSetParent(hitGameObject, grabbedElement.gameObject);
+                    }
+                }
+
             }
         }
     }
@@ -332,7 +347,9 @@ public class Player : NetworkBehaviour
             GameObject obj = Instantiate(elementPrefab);
             obj.transform.position =
                 _manager.elementsSpawnPoints[i].position - elementPrefab.transform.GetChild(0).position;
+            _manager.elementsSpawnPoints[i].GetComponent<Point>().boundElem = obj.GetComponent<Element>();
             NetworkServer.Spawn(obj);
+            RpcSetParent(_manager.elementsSpawnPoints[i].gameObject,obj);
         }
 
         NetworkManager.singleton.maxConnections = 0;
@@ -345,8 +362,15 @@ public class Player : NetworkBehaviour
     {
         _manager.localPlayer.UI.GetComponent<Animator>().SetBool("Game", true);
         _manager.IsGameStarted = true;
-        FindObjectsOfType<Element>().ToList().ForEach(x => x.transform.SetParent(_manager.elementsParent));
     }
+
+
+    [Command]
+    void CmdSetParent(GameObject parent, GameObject child) => RpcSetParent(parent, child);
+
+    [ClientRpc]
+    void RpcSetParent(GameObject parent, GameObject child) => child.transform.parent = parent.transform;
+
 
     [Command]
     void CmdSetObjectOwn(GameObject gameObject)
