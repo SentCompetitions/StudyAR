@@ -72,3 +72,6 @@ crashlytics-build.properties
 
 # Somedata
 QCAR/somedata16
+
+#Other
+.idea/
