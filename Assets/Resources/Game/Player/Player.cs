@@ -302,6 +302,7 @@ public class Player : NetworkBehaviour
 
     private void SetWirePortIcons(bool active)
     {
+        List<GameObject> icons = new List<GameObject>();
         if (active)
         {
             foreach (var element in FindObjectsOfType<Element>())
@@ -309,12 +310,17 @@ public class Player : NetworkBehaviour
                 foreach (var elementWirePort in element.wirePorts)
                 {
                     GameObject icon = new GameObject("Wireicon");
+                    icons.Add(icon);
                     icon.transform.SetParent(UI.transform);
                     var image = icon.AddComponent<Image>();
                     image.sprite = Array.Find(wirePrefab.GetComponent<Wire>().wireSettings,
                             w => w.type == elementWirePort.type).icon;
-                    image.rectTransform.sizeDelta = new Vector2(20f, 20f);
+                    float resolution = 4f + 1f * Screen.dpi;
+                    if (resolution == 0) resolution = 25f;
+                    image.rectTransform.sizeDelta = new Vector2(resolution, resolution);
                     var script = icon.AddComponent<WirePortIcon>();
+                    script.image = image;
+                    script.player = this;
                     script.mainCamera = mainCamera.GetComponent<Camera>();
                     script.target = elementWirePort.wirePos;
                 }
