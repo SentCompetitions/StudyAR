@@ -224,7 +224,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   resistance: 1000
-  maxAllowedPower: 0.05
+  maxAllowedPower: -1
   wirePorts:
   - type: +
     way: '-'
@@ -237,6 +237,7 @@ MonoBehaviour:
   amperage: 0
   voltage: 0
   lightObject: {fileID: 1082033538603254910}
+  warningSprite: {fileID: 21300000, guid: a433db6a43cf9dd4fb9e3924d770210e, type: 3}
 --- !u!135 &1189956668365203189
 SphereCollider:
   m_ObjectHideFlags: 0

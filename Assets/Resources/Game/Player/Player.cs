@@ -37,7 +37,8 @@ public class Player : NetworkBehaviour
     private WirePort selectedWirePort;
     private Element selectedElement;
 
-    private GameObject mainCamera;
+    [NonSerialized]
+    public GameObject mainCamera;
     private GameManager _manager = GameManager.instance;
 
     private Sprite _newPointer;
@@ -320,8 +321,6 @@ public class Player : NetworkBehaviour
                     image.rectTransform.sizeDelta = new Vector2(resolution, resolution);
                     var script = icon.AddComponent<WirePortIcon>();
                     script.image = image;
-                    script.player = this;
-                    script.mainCamera = mainCamera.GetComponent<Camera>();
                     script.target = elementWirePort.wirePos;
                 }
             }
