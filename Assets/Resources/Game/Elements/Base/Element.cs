@@ -14,8 +14,8 @@ public class Element : NetworkBehaviour
     public WirePort[] wirePorts;
 
     [Header("Runtime values")] 
-    public float amperage;
-    public float voltage;
+    [SyncVar] public float amperage;
+    [SyncVar] public float voltage;
 
     private void Start()
     {

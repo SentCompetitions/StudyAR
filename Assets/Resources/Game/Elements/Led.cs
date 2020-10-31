@@ -12,7 +12,7 @@ public class Led : Element
 
     void Update()
     {
-        float intensity = amperage * voltage / maxAllowedPower * 5;
+        float intensity = amperage * voltage / maxAllowedPower * 3;
         lightObject.transform.localScale = new Vector3(intensity, intensity, intensity);
     }
 }
