@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Experiences")]
+    public Experience[] experiences;
     public Experience experience;
 
     void Start()

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Mirror;
 using Mirror.Discovery;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = System.Object;
 
 public class Menu : MonoBehaviour
 {
@@ -70,12 +72,14 @@ public class Menu : MonoBehaviour
         manager.StartHost();
         networkDiscovery.AdvertiseServer();
         _isHost = true;
+        GameManager.instance.experience = GameManager.instance.experiences[0];
     }
 
     private void Client(Uri uri)
     {
         _isHost = false;
         manager.StartClient(uri);
+        GameManager.instance.experience = GameManager.instance.experiences[0];
     }
 
     public void Client(InputField ip)
@@ -83,6 +87,7 @@ public class Menu : MonoBehaviour
         manager.networkAddress = ip.text;
         _isHost = false;
         manager.StartClient();
+        GameManager.instance.experience = GameManager.instance.experiences[0];
     }
 
     public void Exit()
@@ -91,5 +96,9 @@ public class Menu : MonoBehaviour
         else manager.StopClient();
         manager.maxConnections = _maxConnections;
         GameManager.instance.IsGameStarted = false;
+        for (var i = 0; i < GameManager.instance.experience.steps.Length; i++)
+        {
+            GameManager.instance.experience.steps[i].isCompleted = false;
+        }
     }
 }

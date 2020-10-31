@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using Mirror;
+using Resources.Game;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Color = UnityEngine.Color;
@@ -31,6 +33,12 @@ public class Player : NetworkBehaviour
     public Color buttonError;
     public GameObject connectButtonPrefab;
     public GameObject wirePrefab;
+    
+    [NonSerialized] public UnityEvent<string> onGameAction;
+    [Space]
+    public Transform instructionParent;
+    public GameObject textPrefab;
+    public Color currentActionColor;
 
     [Header("Debug (Readonly)")]
     public Element grabbedElement;
@@ -56,15 +64,59 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
+        onGameAction = new UnityEvent<string>();
         if (isLocalPlayer)
         {
             mainCamera = Camera.main.gameObject;
             selectPointer = pointer.sprite;
+            onGameAction.AddListener(CmdGameAction);
+            UpdateInstruction();
         }
         else UI.SetActive(false);
 
         if (!isServer) hostOnlyObjects.ForEach(o => o.SetActive(false));
         else clientOnlyObjects.ForEach(o => o.SetActive(false));
+    }
+    
+    [Command]
+    private void CmdGameAction(string action)
+    {
+        Debug.Log("[SERVER] Action " + action);
+        RpcGameAction(action);
+    }
+    
+    [ClientRpc]
+    private void RpcGameAction(string action)
+    {
+        Debug.Log("Action " + action);
+        int step = _manager.experience.GetFirstUnCompleteStep();
+        if (_manager.experience.steps[step].eventName == action)
+        {
+            Debug.Log(_manager.experience.steps[step].displayName + " completed");
+            _manager.experience.steps[step].isCompleted = true;
+            _manager.localPlayer.UpdateInstruction();
+        }
+    }
+
+    public void UpdateInstruction()
+    {
+        foreach (Transform o in instructionParent) Destroy(o.gameObject);
+        bool first = true;
+        for (var i = 0; i < _manager.experience.steps.Length; i++)
+        {
+            Step step = _manager.experience.steps[i];
+            if (step.isCompleted)
+            {
+                first = true;
+            }
+            else
+            {
+                var text = Instantiate(textPrefab, instructionParent).GetComponent<Text>();
+                text.text = $"{i+1}. {step.displayName}";
+                if (first) text.color = currentActionColor;
+                first = false;
+            }
+        }
     }
 
     private void Update()
@@ -226,6 +278,7 @@ public class Player : NetworkBehaviour
                     grabbedElement = e;
                     CmdSetObjectOwn(grabbedElement.gameObject);
                     NewPointer = movePointer;
+                    onGameAction.Invoke($"PLAYER_GRAB_{e.name}");
                 }
                 else
                 {
@@ -366,9 +419,9 @@ public class Player : NetworkBehaviour
     [Command]
     public void CmdStartGame()
     {
-        for (var i = 0; i < _manager.experience.AllElements.Length; i++)
+        for (var i = 0; i < _manager.experience.allElements.Length; i++)
         {
-            GameObject elementPrefab = _manager.experience.AllElements[i];
+            GameObject elementPrefab = _manager.experience.allElements[i];
             GameObject obj = Instantiate(elementPrefab);
             Point point = _manager.elementsSpawnPoints[i].GetComponent<Point>();
             point.boundElem = obj.GetComponent<Element>();

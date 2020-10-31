@@ -84,6 +84,7 @@ public class CircuitSimulation : MonoBehaviour
                 e.voltage = source.maxVoltage;
             }
             _oldElements = new List<Element>(_elements);
+            GameManager.instance.localPlayer.onGameAction.Invoke("CIRCUIT_COMPLETE_" + _elements.Count);
         }
         else
         {
