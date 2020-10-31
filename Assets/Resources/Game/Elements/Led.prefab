@@ -224,7 +224,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   resistance: 1000
-  maxAllowedPower: -1
+  maxAllowedPower: 0.05
   wirePorts:
   - type: +
     way: '-'
