@@ -51,6 +51,9 @@ public class Player : NetworkBehaviour
 
     private Sprite _newPointer;
 
+    /// <summary>
+    ///  Меняет указатель на другой с анимацией
+    /// </summary>
     public Sprite NewPointer
     {
         get => _newPointer;
@@ -65,7 +68,7 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
-        onGameAction = new UnityEvent<string>();
+        onGameAction = new UnityEvent<string>(); // Если игрок возьмёт что-то или создаст цепь, то вызоветься это событие
         if (isLocalPlayer)
         {
             mainCamera = Camera.main.gameObject;
@@ -78,14 +81,22 @@ public class Player : NetworkBehaviour
         if (!isServer) hostOnlyObjects.ForEach(o => o.SetActive(false));
         else clientOnlyObjects.ForEach(o => o.SetActive(false));
     }
-    
+
+    /// <summary>
+    /// Синхронизирует выполненное действие по сети (между другими игоками)
+    /// </summary>
+    /// <param name="action">Строка типа SUBJECT_ACTION_OBJECT (Например "PLAYER_GRAB_Battery")</param>
     [Command]
     private void CmdGameAction(string action)
     {
         Debug.Log("[SERVER] Action " + action);
         RpcGameAction(action);
     }
-    
+
+    /// <summary>
+    /// Вызываеться у каждого игрока
+    /// </summary>
+    /// <param name="action"></param>
     [ClientRpc]
     private void RpcGameAction(string action)
     {
@@ -99,6 +110,9 @@ public class Player : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Обновляет UI список инструкций
+    /// </summary>
     public void UpdateInstruction()
     {
         foreach (Transform o in instructionParent) Destroy(o.gameObject);
@@ -124,11 +138,12 @@ public class Player : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
 
-        transform.position = mainCamera.transform.position;
+        transform.position = mainCamera.transform.position; // Привязка положения игрока к камере
         transform.rotation = mainCamera.transform.rotation;
 
         if (!_manager.IsGameStarted) return;
 
+        // Обработка нажатий
         if (Input.touchCount == 1 && !IsPointerOverUIObject())
         {
             Debug.Log(Input.GetTouch(0).phase);
@@ -141,6 +156,7 @@ public class Player : NetworkBehaviour
             else if (Input.touchCount == 0) UpdateTouchInput(TouchPhase.Stationary);
         }
 
+        // Обработка взятого элемента
         if (grabbedElement)
         {
             RaycastHit[] hits = Physics.RaycastAll(mainCamera.transform.position, mainCamera.transform.forward);
@@ -173,6 +189,9 @@ public class Player : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Обновляет данные обы удержаии, клике
+    /// </summary>
     private void UpdateTouchInput(TouchPhase phase)
     {
         if (phase == TouchPhase.Began || phase == TouchPhase.Ended && !_isHold && _clickTime != 0f) _clickTime = Time.time;
@@ -303,6 +322,10 @@ public class Player : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Получение элемента на который смотрит игрок
+    /// </summary>
+    /// <returns>Элемент на который смотрит игрок</returns>
     private Element GetElement()
     {
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit))
@@ -354,6 +377,10 @@ public class Player : NetworkBehaviour
         CircuitSimulation.UpdateSimulationEvent.Invoke();
     }
 
+    /// <summary>
+    /// Показывает или отключает иконки +, - итд
+    /// </summary>
+    /// <param name="active">Показывать или нет иконки</param>
     private void SetWirePortIcons(bool active)
     {
         List<GameObject> icons = new List<GameObject>();
@@ -407,6 +434,10 @@ public class Player : NetworkBehaviour
         wire.transform.SetParent(_manager.elementsParent);
     }
 
+    /// <summary>
+    /// Кратковременное переключения указателя
+    /// </summary>
+    /// <param name="blinkPointer">Новый указатель</param>
     private IEnumerator BlinkPointer(Sprite blinkPointer)
     {
         Sprite old = pointer.sprite;
@@ -441,14 +472,21 @@ public class Player : NetworkBehaviour
         _manager.IsGameStarted = true;
     }
 
-
+    /// <summary>
+    /// Устанавливает у всех игроков для данного элемента нового родителя
+    /// </summary>
+    /// <param name="parent">Родитель</param>
+    /// <param name="child">Ребёнок</param>
     [Command]
     void CmdSetParent(GameObject parent, GameObject child) => RpcSetParent(parent, child);
 
     [ClientRpc]
     void RpcSetParent(GameObject parent, GameObject child) => child.transform.parent = parent.transform;
 
-
+    /// <summary>
+    /// Устанавливает нового владельца объекта в сети (Необходимо для движения объекта и изменения его свойств)
+    /// </summary>
+    /// <param name="gameObject">Объект</param>
     [Command]
     void CmdSetObjectOwn(GameObject gameObject)
     {
@@ -456,6 +494,11 @@ public class Player : NetworkBehaviour
         gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
     }
 
+
+    /// <summary>
+    /// Перекрывает ли палец игрока или указатель мыши объекты UI
+    /// </summary>
+    /// <returns>true если перекрывает, false если нет</returns>
     private bool IsPointerOverUIObject()
     {
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
