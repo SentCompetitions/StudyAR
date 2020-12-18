@@ -146,7 +146,6 @@ public class Player : NetworkBehaviour
         // Обработка нажатий
         if (Input.touchCount == 1 && !IsPointerOverUIObject())
         {
-            Debug.Log(Input.GetTouch(0).phase);
             UpdateTouchInput(Input.GetTouch(0).phase);
         }
         else if (!IsPointerOverUIObject())
@@ -283,8 +282,6 @@ public class Player : NetworkBehaviour
                     StartCoroutine(BlinkPointer(errorPointer));
                 }
             }
-
-            Debug.Log("Click");
         }
         else if (Time.time - _clickTime > timeForClick && _clickTime != 0f)
         {
@@ -311,8 +308,6 @@ public class Player : NetworkBehaviour
                 grabbedElement = null;
                 NewPointer = selectPointer;
             }
-
-            Debug.Log("Hold " + phase);
         }
 
         if (phase == TouchPhase.Ended)
