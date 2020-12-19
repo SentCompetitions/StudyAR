@@ -2442,7 +2442,6 @@ MonoBehaviour:
   movePointer: {fileID: 21300000, guid: ddc0e9fd1f8168341b63a372cb7b86de, type: 3}
   connectPointer: {fileID: 21300000, guid: 7d4584544f956924f93a82574ebc91c1, type: 3}
   errorPointer: {fileID: 21300000, guid: 51c1497c51c59644fbab5332e64aac82, type: 3}
-  timeForClick: 0.3
   connectButtons: {fileID: 5529260066523868563}
   buttonError: {r: 0.5566038, g: 0.13915095, b: 0.15916613, a: 1}
   connectButtonPrefab: {fileID: 4945294751522647374, guid: 4fe366a7c334341479543dec2fe63e4c, type: 3}
@@ -2450,6 +2449,8 @@ MonoBehaviour:
   instructionParent: {fileID: 8113464607633064733}
   textPrefab: {fileID: 2343728799947646481, guid: 6346faaa583f73f499505d8edd6cd79d, type: 3}
   currentActionColor: {r: 1, g: 1, b: 1, a: 1}
+  touchInputManager: {fileID: 5147709031775552003}
+  e: {fileID: 0}
   grabbedElement: {fileID: 0}
 --- !u!114 &5147709031775552003
 MonoBehaviour:
@@ -2464,6 +2465,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeFoClick: 0.2
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
+  onHolding:
+    m_PersistentCalls:
+      m_Calls: []
+  onHoldStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onHoldEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7282406518596507268
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,17 +3,18 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
-public class TouchInputManager : MonoBehaviour // TODO Disabling on other players and sync with Player.cs
+public class TouchInputManager : MonoBehaviour
 {
     public float timeFoClick = 0.2f;
 
     public bool IsHolding { get; private set; }
 
-    public static UnityEvent OnClick;
-    public static UnityEvent OnHolding;
-    public static UnityEvent OnHoldStart;
-    public static UnityEvent OnHoldEnd;
+    public UnityEvent onClick;
+    public UnityEvent onHolding;
+    public UnityEvent onHoldStart;
+    public UnityEvent onHoldEnd;
 
     private float _beginTime;
 
@@ -48,13 +49,13 @@ public class TouchInputManager : MonoBehaviour // TODO Disabling on other player
             if (Time.time - _beginTime <= timeFoClick)
             {
                 Debug.Log("[InputManager] Click");
-                OnClick?.Invoke();
+                onClick?.Invoke();
             }
             else if (IsHolding)
             {
                 Debug.Log("[InputManager] End holding");
                 IsHolding = false;
-                OnHoldEnd?.Invoke();
+                onHoldEnd?.Invoke();
             }
         }
         else
@@ -65,12 +66,12 @@ public class TouchInputManager : MonoBehaviour // TODO Disabling on other player
                 {
                     Debug.Log("[InputManager] Start holding");
                     IsHolding = true;
-                    OnHoldStart?.Invoke();
+                    onHoldStart?.Invoke();
                 }
                 else
                 {
                     Debug.Log("[InputManager] Holding");
-                    OnHolding?.Invoke();
+                    onHolding?.Invoke();
                 }
             }
         }

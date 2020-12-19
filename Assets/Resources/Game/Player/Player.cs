@@ -14,8 +14,7 @@ using Object = System.Object;
 
 public class Player : NetworkBehaviour
 {
-    [Header("UI")]
-    public GameObject UI;
+    [Header("UI")] public GameObject UI;
     public List<GameObject> hostOnlyObjects;
     public List<GameObject> clientOnlyObjects;
     [Space]
@@ -25,28 +24,24 @@ public class Player : NetworkBehaviour
     public Sprite connectPointer;
     public Sprite errorPointer;
     [Space]
-    public float timeForClick = 0.1f;
-    private float _clickTime = 0f;
-    private bool _isHold;
-    [Space]
     public GameObject connectButtons;
     public Color buttonError;
     public GameObject connectButtonPrefab;
     public GameObject wirePrefab;
-    
     [NonSerialized] public UnityEvent<string> onGameAction;
     [Space]
     public Transform instructionParent;
     public GameObject textPrefab;
     public Color currentActionColor;
 
-    [Header("Debug (Readonly)")]
+    [Header("Local Player Scripts")] public TouchInputManager touchInputManager;
+
+    [Header("Debug (Readonly)")] public Element e;
     public Element grabbedElement;
     private WirePort selectedWirePort;
     private Element selectedElement;
 
-    [NonSerialized]
-    public GameObject mainCamera;
+    [NonSerialized] public GameObject mainCamera;
     private GameManager _manager = GameManager.instance;
 
     private Sprite _newPointer;
@@ -68,18 +63,194 @@ public class Player : NetworkBehaviour
 
     private void Start()
     {
-        onGameAction = new UnityEvent<string>(); // Если игрок возьмёт что-то или создаст цепь, то вызоветься это событие
+        onGameAction =
+            new UnityEvent<string>(); // Если игрок возьмёт что-то или создаст цепь, то вызоветься это событие
         if (isLocalPlayer)
         {
             mainCamera = Camera.main.gameObject;
             selectPointer = pointer.sprite;
+
             onGameAction.AddListener(CmdGameAction);
+            touchInputManager.onClick.AddListener(Click);
+            touchInputManager.onHolding.AddListener(Holding);
+            touchInputManager.onHoldStart.AddListener(HoldStart);
+            touchInputManager.onHoldEnd.AddListener(HoldEnd);
+
             UpdateInstruction();
         }
-        else UI.SetActive(false);
+        else
+        {
+            UI.SetActive(false);
+            touchInputManager.enabled = false;
+        }
 
         if (!isServer) hostOnlyObjects.ForEach(o => o.SetActive(false));
         else clientOnlyObjects.ForEach(o => o.SetActive(false));
+    }
+
+    private void Update()
+    {
+        if (!isLocalPlayer) return;
+
+        transform.position = mainCamera.transform.position; // Привязка положения игрока к камере
+        transform.rotation = mainCamera.transform.rotation;
+
+        if (!_manager.IsGameStarted) return;
+
+        e = GetElement();
+
+        // Обработка обводки
+        if (e)
+        {
+            if (_oldElement)
+            {
+                _oldElement.GetComponentInChildren<cakeslice.Outline>().enabled = false;
+            }
+
+            _oldElement = e;
+            e.GetComponentInChildren<cakeslice.Outline>().enabled = true;
+        }
+        else if (_oldElement)
+        {
+            _oldElement.GetComponentInChildren<cakeslice.Outline>().enabled = false;
+            _oldElement = null;
+        }
+    }
+
+    private void HoldStart()
+    {
+        if (selectedWirePort.Equals(default(WirePort)))
+        {
+            if (e)
+            {
+                grabbedElement = e;
+                CmdSetObjectOwn(grabbedElement.gameObject);
+                NewPointer = movePointer;
+                onGameAction.Invoke($"PLAYER_GRAB_{e.name}");
+            }
+            else
+            {
+                NewPointer = errorPointer;
+            }
+        }
+    }
+
+    private void Holding()
+    {
+        // Обработка взятого элемента
+        if (grabbedElement)
+        {
+            RaycastHit[] hits = Physics.RaycastAll(mainCamera.transform.position, mainCamera.transform.forward);
+            foreach (var hit in hits)
+            {
+                GameObject hitGameObject = hit.transform.gameObject;
+                if (hitGameObject.CompareTag("Platform"))
+                {
+                    grabbedElement.transform.position = hit.point;
+
+                    if (!grabbedElement.transform.parent) return;
+                    if (!grabbedElement.transform.parent.gameObject.CompareTag("Point")) return;
+                    grabbedElement.GetComponentInParent<Point>().boundElem = null;
+
+                    CmdSetParent(_manager.elementsParent.gameObject, grabbedElement.gameObject);
+                }
+
+                if (hitGameObject.CompareTag("Point"))
+                {
+                    Point point = hitGameObject.GetComponent<Point>();
+                    if (!point.boundElem)
+                    {
+                        grabbedElement.transform.position = hit.point;
+                        point.boundElem = grabbedElement;
+                        CmdSetParent(hitGameObject, grabbedElement.gameObject);
+                        point.ElemToCenter();
+                    }
+                }
+            }
+        }
+    }
+
+    private void HoldEnd()
+    {
+        if (selectedWirePort.Equals(default(WirePort)))
+        {
+            grabbedElement = null;
+            NewPointer = selectPointer;
+        }
+    }
+
+    private void Click()
+    {
+        if (selectedWirePort.Equals(default(WirePort)))
+        {
+            if (e && !UI.GetComponent<Animator>().GetBool("Connect"))
+            {
+                foreach (Transform o in connectButtons.transform) Destroy(o.gameObject);
+                foreach (WirePort wirePort in e.wirePorts)
+                {
+                    GameObject newButton = Instantiate(connectButtonPrefab, connectButtons.transform);
+                    newButton.GetComponentInChildren<Text>().text = wirePort.type;
+                    WirePort tempWirePort = wirePort;
+                    newButton.GetComponent<Button>().onClick.AddListener(() => StartConnectingPorts(tempWirePort));
+                }
+
+                UI.GetComponent<Animator>().SetBool("Connect", true);
+                NewPointer = selectPointer;
+                selectedElement = e;
+                SetWirePortIcons(true);
+            }
+            else if (UI.GetComponent<Animator>().GetBool("Connect"))
+            {
+                UI.GetComponent<Animator>().SetBool("Connect", false);
+                NewPointer = selectPointer;
+                SetWirePortIcons(false);
+            }
+            else
+            {
+                StartCoroutine(BlinkPointer(errorPointer));
+            }
+        }
+        else
+        {
+            if (e && e != selectedElement)
+            {
+                foreach (Transform o in connectButtons.transform) Destroy(o.gameObject);
+                foreach (WirePort wirePort in e.wirePorts)
+                {
+                    GameObject newButton = Instantiate(connectButtonPrefab, connectButtons.transform);
+                    WirePort from = selectedWirePort;
+                    WirePort to = wirePort;
+
+                    Wire wire = FindObjectsOfType<Wire>().ToList()
+                        .Find(w =>
+                            (w.wirePort1.wirePos == from.wirePos || w.wirePort2.wirePos == from.wirePos) &&
+                            (w.wirePort1.wirePos == to.wirePos || w.wirePort2.wirePos == to.wirePos));
+
+                    newButton.GetComponentInChildren<Text>().text = wirePort.type;
+                    if (!wire)
+                    {
+                        from.element = selectedElement.gameObject;
+                        to.element = e.gameObject;
+                        newButton.GetComponent<Button>().onClick.AddListener(() => ConnectPorts(from, to));
+                    }
+                    else
+                    {
+                        newButton.GetComponent<Image>().color = buttonError;
+                        GameObject temp = wire.gameObject;
+                        newButton.GetComponent<Button>().onClick.AddListener(() => DestroyWithClose(temp));
+                    }
+                }
+
+                UI.GetComponent<Animator>().SetBool("Connect", true);
+                NewPointer = selectPointer;
+                selectedElement = null;
+                selectedWirePort = default;
+            }
+            else
+            {
+                StartCoroutine(BlinkPointer(errorPointer));
+            }
+        }
     }
 
     /// <summary>
@@ -127,193 +298,10 @@ public class Player : NetworkBehaviour
             else
             {
                 var text = Instantiate(textPrefab, instructionParent).GetComponent<Text>();
-                text.text = $"{i+1}. {step.displayName}";
+                text.text = $"{i + 1}. {step.displayName}";
                 if (first) text.color = currentActionColor;
                 first = false;
             }
-        }
-    }
-
-    private void Update()
-    {
-        if (!isLocalPlayer) return;
-
-        transform.position = mainCamera.transform.position; // Привязка положения игрока к камере
-        transform.rotation = mainCamera.transform.rotation;
-
-        if (!_manager.IsGameStarted) return;
-
-        // Обработка нажатий
-        if (Input.touchCount == 1 && !IsPointerOverUIObject())
-        {
-            UpdateTouchInput(Input.GetTouch(0).phase);
-        }
-        else if (!IsPointerOverUIObject())
-        {
-            if (Input.GetMouseButtonDown(0)) UpdateTouchInput(TouchPhase.Began);
-            else if (Input.GetMouseButtonUp(0)) UpdateTouchInput(TouchPhase.Ended);
-            else if (Input.touchCount == 0) UpdateTouchInput(TouchPhase.Stationary);
-        }
-
-        // Обработка взятого элемента
-        if (grabbedElement)
-        {
-            RaycastHit[] hits = Physics.RaycastAll(mainCamera.transform.position, mainCamera.transform.forward);
-            foreach (var hit in hits)
-            {
-                GameObject hitGameObject = hit.transform.gameObject;
-                if (hitGameObject.CompareTag("Platform"))
-                {
-                    grabbedElement.transform.position = hit.point;
-
-                    if (!grabbedElement.transform.parent) return;
-                    if (!grabbedElement.transform.parent.gameObject.CompareTag("Point")) return;
-                    grabbedElement.GetComponentInParent<Point>().boundElem = null;
-
-                    CmdSetParent(_manager.elementsParent.gameObject, grabbedElement.gameObject);
-                }
-                if (hitGameObject.CompareTag("Point"))
-                {
-                    Point point = hitGameObject.GetComponent<Point>();
-                    if (!point.boundElem)
-                    {
-                        grabbedElement.transform.position = hit.point;
-                        point.boundElem = grabbedElement;
-                        CmdSetParent(hitGameObject, grabbedElement.gameObject);
-                        point.ElemToCenter();
-                    }
-                }
-
-            }
-        }
-    }
-
-    /// <summary>
-    /// Обновляет данные обы удержаии, клике
-    /// </summary>
-    private void UpdateTouchInput(TouchPhase phase)
-    {
-        if (phase == TouchPhase.Began || phase == TouchPhase.Ended && !_isHold && _clickTime != 0f) _clickTime = Time.time;
-
-        var e = GetElement();
-        if (e)
-        {
-            if (_oldElement) {
-                _oldElement.GetComponentInChildren<cakeslice.Outline>().enabled = false;
-            }
-            _oldElement = e;
-            e.GetComponentInChildren<cakeslice.Outline>().enabled = true;
-        }
-        else if (_oldElement)
-        {
-            _oldElement.GetComponentInChildren<cakeslice.Outline>().enabled = false;
-            _oldElement = null;
-        }
-
-        if (Time.time - _clickTime < timeForClick && phase == TouchPhase.Ended)
-        {
-            if (selectedWirePort.Equals(default(WirePort)))
-            {
-                if (e && !UI.GetComponent<Animator>().GetBool("Connect"))
-                {
-                    foreach (Transform o in connectButtons.transform) Destroy(o.gameObject);
-                    foreach (WirePort wirePort in e.wirePorts)
-                    {
-                        GameObject newButton = Instantiate(connectButtonPrefab, connectButtons.transform);
-                        newButton.GetComponentInChildren<Text>().text = wirePort.type;
-                        WirePort tempWirePort = wirePort;
-                        newButton.GetComponent<Button>().onClick.AddListener(() => StartConnectingPorts(tempWirePort));
-                    }
-
-                    UI.GetComponent<Animator>().SetBool("Connect", true);
-                    NewPointer = selectPointer;
-                    selectedElement = e;
-                    SetWirePortIcons(true);
-                }
-                else if (UI.GetComponent<Animator>().GetBool("Connect"))
-                {
-                    UI.GetComponent<Animator>().SetBool("Connect", false);
-                    NewPointer = selectPointer;
-                    SetWirePortIcons(false);
-                }
-                else
-                {
-                    StartCoroutine(BlinkPointer(errorPointer));
-                }
-            }
-            else
-            {
-                if (e && e != selectedElement)
-                {
-                    foreach (Transform o in connectButtons.transform) Destroy(o.gameObject);
-                    foreach (WirePort wirePort in e.wirePorts)
-                    {
-                        GameObject newButton = Instantiate(connectButtonPrefab, connectButtons.transform);
-                        WirePort from = selectedWirePort;
-                        WirePort to = wirePort;
-
-                        Wire wire = FindObjectsOfType<Wire>().ToList()
-                            .Find(w =>
-                                (w.wirePort1.wirePos == from.wirePos || w.wirePort2.wirePos == from.wirePos) &&
-                                (w.wirePort1.wirePos == to.wirePos || w.wirePort2.wirePos == to.wirePos));
-
-                        newButton.GetComponentInChildren<Text>().text = wirePort.type;
-                        if (!wire)
-                        {
-                            from.element = selectedElement.gameObject;
-                            to.element = e.gameObject;
-                            newButton.GetComponent<Button>().onClick.AddListener(() => ConnectPorts(from, to));
-                        }
-                        else
-                        {
-                            newButton.GetComponent<Image>().color = buttonError;
-                            GameObject temp = wire.gameObject;
-                            newButton.GetComponent<Button>().onClick.AddListener(() => DestroyWithClose(temp));
-                        }
-                    }
-
-                    UI.GetComponent<Animator>().SetBool("Connect", true);
-                    NewPointer = selectPointer;
-                    selectedElement = null;
-                    selectedWirePort = default;
-                }
-                else
-                {
-                    StartCoroutine(BlinkPointer(errorPointer));
-                }
-            }
-        }
-        else if (Time.time - _clickTime > timeForClick && _clickTime != 0f)
-        {
-            if (!_isHold) phase = TouchPhase.Began;
-            _isHold = true;
-
-            if (phase == TouchPhase.Began && selectedWirePort.Equals(default(WirePort)))
-            {
-                if (e)
-                {
-                    grabbedElement = e;
-                    CmdSetObjectOwn(grabbedElement.gameObject);
-                    NewPointer = movePointer;
-                    onGameAction.Invoke($"PLAYER_GRAB_{e.name}");
-                }
-                else
-                {
-                    NewPointer = errorPointer;
-                }
-            }
-
-            if (phase == TouchPhase.Ended && selectedWirePort.Equals(default(WirePort)))
-            {
-                grabbedElement = null;
-                NewPointer = selectPointer;
-            }
-        }
-
-        if (phase == TouchPhase.Ended)
-        {
-            _clickTime = 0f;
-            _isHold = false;
         }
     }
 
@@ -369,6 +357,7 @@ public class Player : NetworkBehaviour
             Debug.Log($"[SERVER] Wait for {gameObject} destroy");
             yield return new WaitForEndOfFrame();
         }
+
         CircuitSimulation.UpdateSimulationEvent.Invoke();
     }
 
@@ -390,7 +379,7 @@ public class Player : NetworkBehaviour
                     icon.transform.SetParent(UI.transform);
                     var image = icon.AddComponent<Image>();
                     image.sprite = Array.Find(wirePrefab.GetComponent<Wire>().wireSettings,
-                            w => w.type == elementWirePort.type).icon;
+                        w => w.type == elementWirePort.type).icon;
                     float resolution = 4f + 1f * Screen.dpi;
                     if (resolution == 0) resolution = 25f;
                     image.rectTransform.sizeDelta = new Vector2(resolution, resolution);
@@ -452,7 +441,7 @@ public class Player : NetworkBehaviour
             point.boundElem = obj.GetComponent<Element>();
             point.ElemToCenter();
             NetworkServer.Spawn(obj);
-            RpcSetParent(_manager.elementsSpawnPoints[i].gameObject,obj);
+            RpcSetParent(_manager.elementsSpawnPoints[i].gameObject, obj);
         }
 
         NetworkManager.singleton.maxConnections = 0;
