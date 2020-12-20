@@ -11,10 +11,12 @@ using Object = System.Object;
 public class Menu : MonoBehaviour
 {
     public NetworkDiscovery networkDiscovery;
+
     [Header("Main menu")]
     public GameObject mainMenu;
     public GameObject serversList;
     public GameObject serverButtonPrefab;
+
     [Header("Connection")]
     public InputField ip;
 
