@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
-using Resources.Game;
+using Resources.Structs;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Experiences")]
+    public Pack[] packs;
+    [Space]
     public Experience[] experiences;
     public Experience experience;
 

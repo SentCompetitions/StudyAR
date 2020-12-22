@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using Mirror;
-using Resources.Game;
+using Resources.Structs;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -273,10 +273,10 @@ public class Player : NetworkBehaviour
     {
         Debug.Log("Action " + action);
         int step = _manager.experience.GetFirstUnCompleteStep();
-        if (_manager.experience.steps[step].eventName == action)
+        if (_manager.experience.actions[step].action == action)
         {
-            Debug.Log(_manager.experience.steps[step].displayName + " completed");
-            _manager.experience.steps[step].isCompleted = true;
+            Debug.Log(_manager.experience.actions[step].description + " completed");
+            _manager.experience.actions[step].isCompleted = true;
             _manager.localPlayer.UpdateInstruction();
         }
     }
@@ -288,9 +288,9 @@ public class Player : NetworkBehaviour
     {
         foreach (Transform o in instructionParent) Destroy(o.gameObject);
         bool first = true;
-        for (var i = 0; i < _manager.experience.steps.Length; i++)
+        for (var i = 0; i < _manager.experience.actions.Length; i++)
         {
-            Step step = _manager.experience.steps[i];
+            Step step = _manager.experience.actions[i];
             if (step.isCompleted)
             {
                 first = true;
@@ -298,7 +298,7 @@ public class Player : NetworkBehaviour
             else
             {
                 var text = Instantiate(textPrefab, instructionParent).GetComponent<Text>();
-                text.text = $"{i + 1}. {step.displayName}";
+                text.text = $"{i + 1}. {step.description}";
                 if (first) text.color = currentActionColor;
                 first = false;
             }

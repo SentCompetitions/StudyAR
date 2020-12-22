@@ -98,9 +98,9 @@ public class Menu : MonoBehaviour
         else manager.StopClient();
         manager.maxConnections = _maxConnections;
         GameManager.instance.IsGameStarted = false;
-        for (var i = 0; i < GameManager.instance.experience.steps.Length; i++)
+        for (var i = 0; i < GameManager.instance.experience.actions.Length; i++)
         {
-            GameManager.instance.experience.steps[i].isCompleted = false;
+            GameManager.instance.experience.actions[i].isCompleted = false;
         }
     }
 }

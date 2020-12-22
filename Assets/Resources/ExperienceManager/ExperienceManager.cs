@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Resources.Structs;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,8 +14,11 @@ public class ExperienceManager : MonoBehaviour
     {
         CopyToPersistent();
 
-        path.text = "Загруженные сбоники: " + String.Join(", ", GetPacks().Select(x => x.name).ToArray())
-            + '\n' + Application.persistentDataPath;
+        List<Pack> packs = GetPacks();
+
+        path.text = "Загруженные сбоники: " + String.Join(", ", packs.Select(x => x.name).ToArray())
+                                            + '\n' + Application.persistentDataPath;
+        GameManager.instance.packs = packs.ToArray();
     }
 
     /// <summary>
@@ -47,25 +51,20 @@ public class ExperienceManager : MonoBehaviour
     {
         List<Pack> packs = new List<Pack>();
 
-        foreach (string packFile in  Directory.GetFiles(Path.Combine(Application.persistentDataPath, "Packs"), "pack.json", SearchOption.AllDirectories))
+        foreach (string packFile in Directory.GetFiles(Path.Combine(Application.persistentDataPath, "Packs"),
+            "pack.json", SearchOption.AllDirectories))
         {
             try
             {
                 packs.Add(JsonUtility.FromJson<Pack>(File.ReadAllText(packFile)));
                 Debug.Log("[ExperienceManager] Loaded " + packFile);
             }
-            catch (ArgumentException e)
+            catch (Exception e)
             {
-                Debug.LogError("[ExperienceManager] Error on loading " + packFile);
+                Debug.LogError("[ExperienceManager] Error on loading " + packFile + '\n' + e);
             }
         }
 
         return packs;
     }
-}
-
-[Serializable]
-public struct Pack
-{
-    public string name;
 }
