@@ -43,6 +43,7 @@ public class Player : NetworkBehaviour
 
     [NonSerialized] public GameObject mainCamera;
     private GameManager _manager = GameManager.instance;
+    private NetworkGameManager _netManager = NetworkGameManager.instance;
 
     private Sprite _newPointer;
 
@@ -75,8 +76,6 @@ public class Player : NetworkBehaviour
             touchInputManager.onHolding.AddListener(Holding);
             touchInputManager.onHoldStart.AddListener(HoldStart);
             touchInputManager.onHoldEnd.AddListener(HoldEnd);
-
-            UpdateInstruction();
         }
         else
         {
@@ -272,11 +271,11 @@ public class Player : NetworkBehaviour
     private void RpcGameAction(string action)
     {
         Debug.Log("Action " + action);
-        int step = _manager.experience.GetFirstUnCompleteStep();
-        if (_manager.experience.actions[step].action == action)
+        int step = _netManager.experience.GetFirstUnCompleteStep();
+        if (_netManager.experience.actions[step].action == action)
         {
-            Debug.Log(_manager.experience.actions[step].description + " completed");
-            _manager.experience.actions[step].isCompleted = true;
+            Debug.Log(_netManager.experience.actions[step].description + " completed");
+            _netManager.experience.actions[step].isCompleted = true;
             _manager.localPlayer.UpdateInstruction();
         }
     }
@@ -288,9 +287,9 @@ public class Player : NetworkBehaviour
     {
         foreach (Transform o in instructionParent) Destroy(o.gameObject);
         bool first = true;
-        for (var i = 0; i < _manager.experience.actions.Length; i++)
+        for (var i = 0; i < _netManager.experience.actions.Length; i++)
         {
-            Step step = _manager.experience.actions[i];
+            Step step = _netManager.experience.actions[i];
             if (step.isCompleted)
             {
                 first = true;
@@ -433,9 +432,10 @@ public class Player : NetworkBehaviour
     [Command]
     public void CmdStartGame()
     {
-        for (var i = 0; i < _manager.experience.allElements.Length; i++)
+        _netManager.experience.allElements = new GameObject[0];
+        for (var i = 0; i < _netManager.experience.allElements.Length; i++)
         {
-            GameObject elementPrefab = _manager.experience.allElements[i];
+            GameObject elementPrefab = _netManager.experience.allElements[i];
             GameObject obj = Instantiate(elementPrefab);
             Point point = _manager.elementsSpawnPoints[i].GetComponent<Point>();
             point.boundElem = obj.GetComponent<Element>();
@@ -454,6 +454,7 @@ public class Player : NetworkBehaviour
     {
         _manager.localPlayer.UI.GetComponent<Animator>().SetBool("Game", true);
         _manager.IsGameStarted = true;
+        _manager.localPlayer.UpdateInstruction();
     }
 
     /// <summary>

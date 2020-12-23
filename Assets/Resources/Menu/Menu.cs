@@ -74,14 +74,18 @@ public class Menu : MonoBehaviour
         manager.StartHost();
         networkDiscovery.AdvertiseServer();
         _isHost = true;
-        GameManager.instance.experience = GameManager.instance.experiences[0];
+        NetworkGameManager.onNetworkGameManagerStarted.AddListener(SetExperience);
+    }
+
+    private void SetExperience()
+    {
+        NetworkGameManager.instance.experience = GameManager.instance.packs[0].experiences[0];
     }
 
     private void Client(Uri uri)
     {
         _isHost = false;
         manager.StartClient(uri);
-        GameManager.instance.experience = GameManager.instance.experiences[0];
     }
 
     public void Client(InputField ip)
@@ -89,7 +93,6 @@ public class Menu : MonoBehaviour
         manager.networkAddress = ip.text;
         _isHost = false;
         manager.StartClient();
-        GameManager.instance.experience = GameManager.instance.experiences[0];
     }
 
     public void Exit()
@@ -98,9 +101,9 @@ public class Menu : MonoBehaviour
         else manager.StopClient();
         manager.maxConnections = _maxConnections;
         GameManager.instance.IsGameStarted = false;
-        for (var i = 0; i < GameManager.instance.experience.actions.Length; i++)
+        for (var i = 0; i < NetworkGameManager.instance.experience.actions.Length; i++)
         {
-            GameManager.instance.experience.actions[i].isCompleted = false;
+            NetworkGameManager.instance.experience.actions[i].isCompleted = false;
         }
     }
 }
