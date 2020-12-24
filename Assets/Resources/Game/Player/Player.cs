@@ -432,7 +432,6 @@ public class Player : NetworkBehaviour
     [Command]
     public void CmdStartGame()
     {
-        _netManager.experience.allElements = new GameObject[0];
         for (var i = 0; i < _netManager.experience.allElements.Length; i++)
         {
             GameObject elementPrefab = _netManager.experience.allElements[i];

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Newtonsoft.Json;
 using Resources.Structs;
 using UnityEngine;
 using UnityEngine.UI;
@@ -56,7 +57,32 @@ public class ExperienceManager : MonoBehaviour
         {
             try
             {
-                packs.Add(JsonUtility.FromJson<Pack>(File.ReadAllText(packFile)));
+                Pack pack = JsonUtility.FromJson<Pack>(File.ReadAllText(packFile));
+                for (var i = 0; i < pack.experiences.Length; i++)
+                {
+                    Experience experience = pack.experiences[i];
+                    List<GameObject> elements = new List<GameObject>();
+                    foreach (Step action in experience.actions)
+                    {
+                        if (String.Join("_", action.action.Split('_').Take(2)) == "SCHEME_MAKE")
+                        {
+                            string json = String.Join("_", action.action.Split('_').Skip(2).Take(1));
+                            Dictionary<string, SchemaElement> schemaElements =
+                                JsonConvert.DeserializeObject<Dictionary<string, SchemaElement>>(json);
+                            foreach (var element in schemaElements)
+                            {
+                                elements.Add((GameObject) Array.Find(
+                                    UnityEngine.Resources.FindObjectsOfTypeAll(typeof(GameObject)),
+                                    x => x.name == element.Value.assetName
+                                ));
+                            }
+                        }
+                    }
+
+                    pack.experiences[i].allElements = elements.ToArray();
+                }
+
+                packs.Add(pack);
                 Debug.Log("[ExperienceManager] Loaded " + packFile);
             }
             catch (Exception e)
