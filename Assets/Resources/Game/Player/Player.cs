@@ -287,6 +287,7 @@ public class Player : NetworkBehaviour
     {
         foreach (Transform o in instructionParent) Destroy(o.gameObject);
         bool first = true;
+        _netManager = NetworkGameManager.instance;
         for (var i = 0; i < _netManager.experience.actions.Length; i++)
         {
             Step step = _netManager.experience.actions[i];

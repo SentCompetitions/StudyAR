@@ -41,7 +41,7 @@ public class LibraryManager : MonoBehaviour
 
         search.onValueChanged.AddListener(delegate { AllLibraryElementsOnCollectionChanged(this, null); });
 
-        if (!NetworkGameManager.instance.experience.Equals(default(Experience))) startButton.interactable = true;
+        NetworkGameManager.instance.experience = default;
     }
 
     private void ShowPacks()
