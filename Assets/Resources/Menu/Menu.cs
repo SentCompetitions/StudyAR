@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Mirror;
 using Mirror.Discovery;
+using Resources.Structs;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = System.Object;
@@ -79,7 +80,7 @@ public class Menu : MonoBehaviour
 
     private void SetExperience()
     {
-        NetworkGameManager.instance.experience = GameManager.instance.packs[0].experiences[0];
+        NetworkGameManager.instance.experience = default;
     }
 
     private void Client(Uri uri)
