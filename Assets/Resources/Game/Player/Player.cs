@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using Mirror;
 using Resources.Structs;
 using UnityEngine;
@@ -437,9 +438,14 @@ public class Player : NetworkBehaviour
         {
             GameObject elementPrefab = _netManager.experience.allElements[i];
             GameObject obj = Instantiate(elementPrefab);
+
+            Element element = obj.GetComponent<Element>();
+            element.elementProperties = new SyncList<ElementProperty>(_netManager.experience.elementProperties[i].propertiesArray);
+
             Point point = _manager.elementsSpawnPoints[i].GetComponent<Point>();
-            point.boundElem = obj.GetComponent<Element>();
+            point.boundElem = element;
             point.ElemToCenter();
+
             NetworkServer.Spawn(obj);
             RpcSetParent(_manager.elementsSpawnPoints[i].gameObject, obj);
         }

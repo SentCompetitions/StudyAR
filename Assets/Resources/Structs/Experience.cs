@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using Mirror;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -14,6 +16,7 @@ namespace Resources.Structs
         public string description;
 
         public GameObject[] allElements;
+        public ElementProperties[] elementProperties;
         public Step[] actions;
 
         public int GetFirstUnCompleteStep() => actions.ToList().IndexOf(actions.ToList().First(s => s.isCompleted == false));

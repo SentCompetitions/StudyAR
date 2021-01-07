@@ -2,16 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Mirror;
+using Resources.Structs;
 using UnityEngine;
 
 public class Element : NetworkBehaviour
 {
     [Header("Element settings")] 
-    public float resistance = 10f;
+    [SyncVar] public float resistance = 10f;
     public float maxAllowedPower = .05f;
     [Header("Wires")]
     public WirePort[] wirePorts;
+
+    [Header("Element Properties")]
+    public SyncList<ElementProperty> elementProperties = new SyncList<ElementProperty>();
 
     [Header("Runtime values")] 
     [SyncVar] public float amperage;
@@ -22,6 +27,12 @@ public class Element : NetworkBehaviour
         for (var i = 0; i < wirePorts.Length; i++)
         {
             wirePorts[i].element = gameObject;
+        }
+
+        foreach (var elementProperty in elementProperties)
+        {
+            FieldInfo info = typeof(Element).GetField(elementProperty.name);
+            info.SetValue(this, Convert.ChangeType(elementProperty.value, info.GetValue(this).GetType()));
         }
     }
 
