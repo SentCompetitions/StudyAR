@@ -440,7 +440,7 @@ public class Player : NetworkBehaviour
             GameObject obj = Instantiate(elementPrefab);
 
             Element element = obj.GetComponent<Element>();
-            element.elementProperties = new SyncList<ElementProperty>(_netManager.experience.elementProperties[i].propertiesArray);
+            element.elementProperties = _netManager.experience.elementProperties[i];
 
             Point point = _manager.elementsSpawnPoints[i].GetComponent<Point>();
             point.boundElem = element;

@@ -41,8 +41,6 @@ public class LibraryManager : MonoBehaviour
         _libraryElements.CollectionChanged += LibraryElementsOnCollectionChanged;
 
         search.onValueChanged.AddListener(delegate { AllLibraryElementsOnCollectionChanged(this, null); });
-
-        NetworkGameManager.instance.experience = default;
     }
 
     private void ShowPacks()

@@ -11,17 +11,12 @@ public class NetworkGameManager : NetworkBehaviour
     public static NetworkGameManager instance;
     public static UnityEvent onNetworkGameManagerStarted = new UnityEvent();
 
-    [SyncVar(hook=nameof(OnExperienceUpdate))] public Experience experience;
+    [SyncVar] public Experience experience;
 
     void Start()
     {
         instance = this;
         onNetworkGameManagerStarted.Invoke();
         onNetworkGameManagerStarted.RemoveAllListeners();
-    }
-
-    void OnExperienceUpdate(Experience oldExp, Experience newExp)
-    {
-        experience = newExp;
     }
 }
