@@ -4272,6 +4272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 6410315809404888497}
+  packJsonVersion: 1
 --- !u!223 &7363244936665081329
 Canvas:
   m_ObjectHideFlags: 0
