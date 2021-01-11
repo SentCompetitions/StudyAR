@@ -21,6 +21,8 @@ public class Menu : MonoBehaviour
     [Header("Connection")]
     public InputField ip;
 
+    public static Menu instance;
+
     private int _maxConnections;
 
     NetworkManager manager;
@@ -30,6 +32,7 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         manager = NetworkManager.singleton;
         _maxConnections = manager.maxConnections;
         FindServers();
@@ -98,6 +101,8 @@ public class Menu : MonoBehaviour
 
     public void Exit()
     {
+        GetComponent<Animator>().SetTrigger("Game");
+
         if (_isHost) manager.StopHost();
         else manager.StopClient();
         manager.maxConnections = _maxConnections;
@@ -111,5 +116,7 @@ public class Menu : MonoBehaviour
             }
         }
         NetworkGameManager.instance.experience = default;
+
+        Debug.Log("[Client] Disconnected from server");
     }
 }

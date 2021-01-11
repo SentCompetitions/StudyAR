@@ -11,4 +11,11 @@ public class CustomNetworkManager : NetworkManager
 
         if (maxConnections == 0) conn.Disconnect();
     }
+
+    public override void OnClientDisconnect(NetworkConnection conn)
+    {
+        base.OnClientDisconnect(conn);
+
+        Menu.instance.Exit();
+    }
 }
