@@ -29,6 +29,7 @@ public class Menu : MonoBehaviour
     Dictionary<long, ServerResponse> discoveredServers = new Dictionary<long, ServerResponse>();
 
     private bool _isHost;
+    private static readonly int Game = Animator.StringToHash("Game");
 
     void Start()
     {
@@ -68,9 +69,22 @@ public class Menu : MonoBehaviour
 
     public void OnDiscoveredServer(ServerResponse info)
     {
-        discoveredServers[info.serverId] = info;
-        ip.text = info.uri.Host;
-        // SetServers();
+        if (!discoveredServers.Contains(new KeyValuePair<long, ServerResponse>(info.serverId, info)) && !manager.isNetworkActive)
+        {
+            Debug.Log($"[Network] Discovered server {info.uri.Host}");
+            discoveredServers[info.serverId] = info;
+            ip.text = info.uri.Host;
+            Uri temp = info.uri;
+            AlertManager.ShowAlert(new Alert
+            {
+                title = "Найден хост в локальной сети",
+                text = $"IP: {info.uri.Host}",
+                buttonText = "Подключиться",
+                onButtonClick = delegate { Client(temp); },
+                hidePanel = true
+            });
+            // SetServers();
+        }
     }
 
     public void Host()
@@ -88,20 +102,29 @@ public class Menu : MonoBehaviour
 
     private void Client(Uri uri)
     {
-        _isHost = false;
+        manager.networkAddress = uri.Host;
         manager.StartClient(uri);
+        Client();
     }
 
     public void Client(InputField ip)
     {
         manager.networkAddress = ip.text;
-        _isHost = false;
         manager.StartClient();
+        Client();
+    }
+
+    private void Client()
+    {
+        GetComponent<Animator>().SetTrigger(Game);
+        _isHost = false;
+        discoveredServers.Clear();
+        Debug.Log("[Client] Start client");
     }
 
     public void Exit()
     {
-        GetComponent<Animator>().SetTrigger("Game");
+        GetComponent<Animator>().SetTrigger(Game);
 
         if (_isHost) manager.StopHost();
         else manager.StopClient();

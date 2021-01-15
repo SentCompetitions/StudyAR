@@ -109,6 +109,11 @@ public class ExperienceManager : MonoBehaviour
             catch (Exception e)
             {
                 Debug.LogError("[ExperienceManager] Error on loading " + packFile + '\n' + e);
+                AlertManager.ShowAlert(new Alert
+                {
+                    title = "Ошибка при загрузке сборника",
+                    text = $"{e.Message} ({e.GetType().Name})\nСборник: {packFile}\n"
+                });
             }
         }
 

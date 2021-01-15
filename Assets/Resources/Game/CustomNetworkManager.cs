@@ -16,6 +16,14 @@ public class CustomNetworkManager : NetworkManager
     {
         base.OnClientDisconnect(conn);
 
+        AlertManager.ShowAlert(new Alert
+        {
+            title = "Соеденение разорванно",
+            text = "Соеденение с сервером неожиданно разорванно",
+            buttonText = "OK",
+            onButtonClick = delegate {  }
+        });
+
         Menu.instance.Exit();
     }
 }
