@@ -26,8 +26,10 @@ public class Player : NetworkBehaviour
     public Sprite errorPointer;
     [Space]
     public GameObject connectButtons;
+    public Transform elementInfoContent;
     public Color buttonError;
     public GameObject connectButtonPrefab;
+    public GameObject elementInfoPrefab;
     public GameObject wirePrefab;
     [NonSerialized] public UnityEvent<string> onGameAction;
     [Space]
@@ -192,6 +194,14 @@ public class Player : NetworkBehaviour
                     newButton.GetComponentInChildren<Text>().text = wirePort.type;
                     WirePort tempWirePort = wirePort;
                     newButton.GetComponent<Button>().onClick.AddListener(() => StartConnectingPorts(tempWirePort));
+                }
+
+                foreach (Transform o in elementInfoContent) Destroy(o.gameObject);
+                foreach (var elementProperty in e.elementProperties.propertiesArray)
+                {
+                    GameObject newInfo = Instantiate(elementInfoPrefab, elementInfoContent);
+                    newInfo.GetComponent<Text>().text =
+                        $"{elementProperty.displayName}: {elementProperty.value} {elementProperty.unitName}";
                 }
 
                 UI.GetComponent<Animator>().SetBool("Connect", true);
