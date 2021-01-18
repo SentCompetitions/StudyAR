@@ -7,6 +7,7 @@ namespace Resources.Structs
     {
         public string name;
         public int id;
+        public string slug;
         public string url;
         public string description;
         public string subject;
@@ -14,6 +15,7 @@ namespace Resources.Structs
         public bool isOfficial;
         public bool isPublished;
         public string editors;
+        public int version;
         public Experience[] experiences;
     }
 }

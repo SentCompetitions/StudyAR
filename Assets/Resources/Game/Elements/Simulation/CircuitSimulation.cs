@@ -75,13 +75,13 @@ public class CircuitSimulation : MonoBehaviour
     {
         if (allResistance != 0f)
         {
-            float apmerage = source.maxVoltage / allResistance;
+            float apmerage = source.targetVoltage / allResistance;
             Debug.Log($"[CIRCUIT] Result resistance: {allResistance}");
             Debug.Log($"[CIRCUIT] Result amperage: {apmerage}");
             foreach (var e in _elements)
             {
                 e.amperage = apmerage;
-                e.voltage = source.maxVoltage;
+                e.voltage = source.targetVoltage;
             }
             _oldElements = new List<Element>(_elements);
             GameManager.instance.localPlayer.onGameAction.Invoke("CIRCUIT_COMPLETE_" + _elements.Count);

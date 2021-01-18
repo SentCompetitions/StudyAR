@@ -41,7 +41,7 @@ public class Element : NetworkBehaviour
         elementProperties = newProperties;
         foreach (var elementProperty in elementProperties.propertiesArray)
         {
-            FieldInfo info = typeof(Element).GetField(elementProperty.name);
+            FieldInfo info = this.GetType().GetField(elementProperty.name);
             info.SetValue(this, Convert.ChangeType(elementProperty.value, info.GetValue(this).GetType()));
         }
     }
