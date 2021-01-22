@@ -10,18 +10,11 @@ using UnityEngine;
 [SelectionBase]
 public class Element : NetworkBehaviour
 {
-    [Header("Element settings")] 
-    public float resistance = 10f;
-    public float maxAllowedPower = .05f;
     [Header("Wires")]
     public WirePort[] wirePorts;
 
     [Header("Element Properties")]
     [SyncVar(hook=nameof(OnElementPropertiesUpdate))] public ElementProperties elementProperties;
-
-    [Header("Runtime values")] 
-    [SyncVar] public float amperage;
-    [SyncVar] public float voltage;
 
     private void Start()
     {

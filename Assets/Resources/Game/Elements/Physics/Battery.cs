@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class Battery : Element
+public class Battery : PhysicsElement
 {
     [Header("Source settings")]
     public float maxAmperage;

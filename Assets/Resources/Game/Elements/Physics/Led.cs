@@ -5,7 +5,7 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Led : Element
+public class Led : PhysicsElement
 {
     [Header("Led")]
     public GameObject lightObject;

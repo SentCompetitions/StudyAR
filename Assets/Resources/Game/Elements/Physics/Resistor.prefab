@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3578304420534620458}
   - component: {fileID: 6608165867744901088}
-  - component: {fileID: 5096525546155454548}
+  - component: {fileID: 466402900154920863}
   - component: {fileID: 5232890765749402766}
   - component: {fileID: 8496030489180986078}
   m_Layer: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   serverOnly: 0
   m_AssetId: 
   hasSpawned: 0
---- !u!114 &5096525546155454548
+--- !u!114 &466402900154920863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,12 +106,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3578304420534620461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d6afecf30b8d443a4c9eae581e587a, type: 3}
+  m_Script: {fileID: 11500000, guid: be8c053163674912875a878cb0430a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  maxAllowedPower: 0.05
   wirePorts:
   - type: 1
     way: 2
@@ -121,6 +120,10 @@ MonoBehaviour:
     way: 1
     wirePos: {fileID: 5176904302177664770}
     element: {fileID: 0}
+  elementProperties:
+    propertiesArray: []
+  resistance: 10
+  maxAllowedPower: 0.05
   amperage: 0
   voltage: 0
 --- !u!135 &5232890765749402766

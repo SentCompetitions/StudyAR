@@ -10,8 +10,8 @@ namespace Resources.Game.ExperienceProcessor
     public class PhysicsProcessor : ExperienceProcessor
     {
         private float allResistance;
-        private List<Element> _elements;
-        private List<Element> _oldElements;
+        private List<PhysicsElement> _elements;
+        private List<PhysicsElement> _oldElements;
         private Battery source;
 
         public override string GetExperienceType()
@@ -21,7 +21,7 @@ namespace Resources.Game.ExperienceProcessor
 
         void OnEnable()
         {
-            _oldElements = new List<Element>();
+            _oldElements = new List<PhysicsElement>();
         }
 
         public override void OnSchemaUpdate()
@@ -34,7 +34,7 @@ namespace Resources.Game.ExperienceProcessor
         private IEnumerator UpdateSimulationCoroutine()
         {
             source = FindObjectsOfType<Battery>().First();
-            _elements = new List<Element>();
+            _elements = new List<PhysicsElement>();
             _elements.Clear();
 
             StepInto(WirePort.GetWirePort(source.wirePorts, "+"));
@@ -44,7 +44,7 @@ namespace Resources.Game.ExperienceProcessor
 
         private void StepInto(WirePort wirePort)
         {
-            var sub = wirePort.element.GetComponent<Element>();
+            var sub = wirePort.element.GetComponent<PhysicsElement>();
 
             if (!(sub.Equals(source) && wirePort.type == "-"))
             {
@@ -86,7 +86,7 @@ namespace Resources.Game.ExperienceProcessor
                     e.amperage = apmerage;
                     e.voltage = source.targetVoltage;
                 }
-                _oldElements = new List<Element>(_elements);
+                _oldElements = new List<PhysicsElement>(_elements);
                 GameManager.instance.localPlayer.onGameAction.Invoke("CIRCUIT_COMPLETE_" + _elements.Count);
             }
             else
