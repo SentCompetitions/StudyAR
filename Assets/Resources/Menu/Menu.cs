@@ -92,7 +92,7 @@ public class Menu : MonoBehaviour
         manager.StartHost();
         networkDiscovery.AdvertiseServer();
         _isHost = true;
-        NetworkGameManager.onNetworkGameManagerStarted.AddListener(SetExperience);
+        NetworkGameManager.OnNetworkGameManagerStarted.AddListener(SetExperience);
     }
 
     private void SetExperience()

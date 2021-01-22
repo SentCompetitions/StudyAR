@@ -19,6 +19,17 @@ namespace Resources.Structs
         public ElementProperties[] elementProperties;
         public Step[] actions;
 
+        public Pack Pack
+        {
+            get
+            {
+                Experience experience = this;
+                return GameManager.instance.packs.ToList().Where(
+                    p => p.experiences.ToList().Contains(experience)
+                ).ToArray()[0];
+            }
+        }
+
         public int GetFirstUnCompleteStep() => actions.ToList().IndexOf(actions.ToList().First(s => s.isCompleted == false));
     }
 }

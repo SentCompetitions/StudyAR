@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using Mirror;
+using Resources.Game.ExperienceProcessor;
 using Resources.Structs;
 using UnityEngine;
 using UnityEngine.Events;
@@ -369,7 +370,7 @@ public class Player : NetworkBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        CircuitSimulation.UpdateSimulationEvent.Invoke();
+        _netManager.processor.OnSchemaUpdate();
     }
 
     /// <summary>
@@ -419,7 +420,7 @@ public class Player : NetworkBehaviour
         wire.wirePort2 = to;
         NetworkServer.Spawn(obj);
         Debug.Log("Need to update");
-        CircuitSimulation.UpdateSimulationEvent.Invoke();
+        _netManager.processor.OnSchemaUpdate();
         RpcSpawnWire(obj);
     }
 
@@ -461,7 +462,7 @@ public class Player : NetworkBehaviour
         }
 
         NetworkManager.singleton.maxConnections = 0;
-
+        NetworkGameManager.OnGameStarted.Invoke();
         RcpStartGame();
     }
 
