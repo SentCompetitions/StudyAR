@@ -44,11 +44,8 @@ public class GameManager : MonoBehaviour
     }
 
 
-    [Header("Experiences")]
+    [Header("Loaded packs")]
     public Pack[] packs;
-    [Space]
-    public Experience[] experiences;
-    public Experience experience;
 
     void Start()
     {

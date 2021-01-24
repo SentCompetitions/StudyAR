@@ -36,6 +36,6 @@ public class NetworkGameManager : NetworkBehaviour
     {
         processor = experienceProcessors.Find(p => p.GetExperienceType() == experience.Pack.subject);
         processor.enabled = true;
-        Debug.Log(processor);
+        Debug.Log("[NetGameManager] Selected " + processor.GetType().Name);
     }
 }

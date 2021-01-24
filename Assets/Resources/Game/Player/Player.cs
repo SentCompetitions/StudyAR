@@ -309,10 +309,25 @@ public class Player : NetworkBehaviour
             }
             else
             {
-                var text = Instantiate(textPrefab, instructionParent).GetComponent<Text>();
+                GameObject stepObj = Instantiate(textPrefab, instructionParent);
+                Text text = stepObj.GetComponentInChildren<Text>();
                 text.text = $"{i + 1}. {step.description}";
                 if (first) text.color = currentActionColor;
                 first = false;
+
+                Image background = stepObj.GetComponentInChildren<Image>();
+                if (step.imageTexture)
+                {
+                    background.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = Sprite.Create(
+                        step.imageTexture,
+                        new Rect(0.0f, 0.0f, step.imageTexture.width, step.imageTexture.height),
+                        new Vector2(0.5f, 0.5f)
+                    );
+                }
+                else
+                {
+                    background.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -463,15 +478,58 @@ public class Player : NetworkBehaviour
 
         NetworkManager.singleton.maxConnections = 0;
         NetworkGameManager.OnGameStarted.Invoke();
-        RcpStartGame();
+        RpcStartGame();
+
+        // for (var i = 0; i < _netManager.experience.actions.Length; i++)
+        // {
+        //     if (_netManager.experience.actions[i].imageTexture)
+        //     {
+        //         byte[] buffer;
+        //         byte[] bytes = _netManager.experience.actions[i].imageTexture.EncodeToPNG();
+        //         for(int ii = 0; ii < bytes.Length; ii+=16000)
+        //         {
+        //             int chunkSize = 16000 - Math.Max(0, (ii+16000) - bytes.Length);
+        //             buffer = new byte[chunkSize];
+        //             Array.Copy(bytes, ii, buffer, 0, chunkSize);
+        //             RpcSetImage(i, buffer);
+        //         }
+        //         RpcBakeImage(i);
+        //     }
+        // }
     }
 
     [ClientRpc]
-    void RcpStartGame()
+    void RpcStartGame()
     {
         _manager.localPlayer.UI.GetComponent<Animator>().SetBool("Game", true);
         _manager.IsGameStarted = true;
         _manager.localPlayer.UpdateInstruction();
+    }
+
+    [ClientRpc]
+    void RpcSetImage(int i, byte[] image)
+    {
+        if (NetworkGameManager.instance.experience.actions[i].imageBytes != null)
+        {
+            var exist = NetworkGameManager.instance.experience.actions[i].imageBytes;
+            var newImage = new byte[exist.Length + image.Length];
+            exist.CopyTo(newImage, 0);
+            NetworkGameManager.instance.experience.actions[i].imageBytes = newImage;
+        }
+        else
+        {
+            NetworkGameManager.instance.experience.actions[i].imageBytes = image;
+        }
+    }
+
+    [ClientRpc]
+    void RpcBakeImage(int i)
+    {
+        Texture2D texture = new Texture2D(2, 2);
+        texture.LoadImage(NetworkGameManager.instance.experience.actions[i].imageBytes);
+        texture.Apply();
+        NetworkGameManager.instance.experience.actions[i].imageTexture = texture;
+        GameManager.instance.localPlayer.UpdateInstruction();
     }
 
     /// <summary>

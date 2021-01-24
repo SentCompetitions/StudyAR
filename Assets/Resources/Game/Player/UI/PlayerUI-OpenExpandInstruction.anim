@@ -70,7 +70,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Spacing
-    path: Game/InstructionBack/Steps
+    path: Game/InstructionBack/Steps ScrollView/Viewport/Content
     classID: 114
     script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_PPtrCurves: []
@@ -89,7 +89,7 @@ AnimationClip:
       customType: 28
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4055748080
+      path: 2565293504
       attribute: 1012083121
       script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
       typeID: 114
@@ -170,7 +170,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Spacing
-    path: Game/InstructionBack/Steps
+    path: Game/InstructionBack/Steps ScrollView/Viewport/Content
     classID: 114
     script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_EulerEditorCurves: []

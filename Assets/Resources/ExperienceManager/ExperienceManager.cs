@@ -74,8 +74,9 @@ public class ExperienceManager : MonoBehaviour
 
                         List<Tuple<GameObject, string>> elements = new List<Tuple<GameObject, string>>();
 
-                        foreach (Step action in experience.actions)
+                        for (var ii = 0; ii < experience.actions.Length; ii++)
                         {
+                            Step action = experience.actions[ii];
                             if (String.Join("_", action.action.Split('_').Take(2)) == "SCHEME_MAKE")
                             {
                                 string json = String.Join("_", action.action.Split('_').Skip(2).Take(1));
@@ -86,8 +87,19 @@ public class ExperienceManager : MonoBehaviour
                                     elements.Add(new Tuple<GameObject, string>((GameObject) Array.Find(
                                             UnityEngine.Resources.FindObjectsOfTypeAll(typeof(GameObject)),
                                             x => x.name == element.Value.assetName),
-                                        JsonConvert.SerializeObject(new ElementProperties {propertiesArray = element.Value.properties})));
+                                        JsonConvert.SerializeObject(new ElementProperties
+                                            {propertiesArray = element.Value.properties})));
                                 }
+                            }
+
+                            string imageFile = Path.Combine(Path.GetDirectoryName(packFile), action.image);
+                            if (File.Exists(imageFile))
+                            {
+                                var fileData = File.ReadAllBytes(imageFile);
+                                var texture = new Texture2D(2, 2);
+                                texture.LoadImage(fileData);
+                                texture.Apply();
+                                experience.actions[ii].imageTexture = texture;
                             }
                         }
 
