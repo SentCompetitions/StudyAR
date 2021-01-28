@@ -82,6 +82,7 @@ public class ExperienceManager : MonoBehaviour
                                 string json = String.Join("_", action.action.Split('_').Skip(2).Take(1));
                                 Dictionary<string, SchemaElement> schemaElements =
                                     JsonConvert.DeserializeObject<Dictionary<string, SchemaElement>>(json);
+                                //pack.experiences[i].actions[ii].schemaElements = schemaElements;
                                 foreach (var element in schemaElements)
                                 {
                                     elements.Add(new Tuple<GameObject, string>((GameObject) Array.Find(

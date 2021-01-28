@@ -129,7 +129,7 @@ public class Player : NetworkBehaviour
                 grabbedElement = e;
                 CmdSetObjectOwn(grabbedElement.gameObject);
                 NewPointer = movePointer;
-                onGameAction.Invoke($"PLAYER_GRAB_{e.name}");
+                onGameAction.Invoke($"PLAYER_GRAB_{e.name.Replace("(Clone)", "")}");
             }
             else
             {
@@ -197,13 +197,7 @@ public class Player : NetworkBehaviour
                     newButton.GetComponent<Button>().onClick.AddListener(() => StartConnectingPorts(tempWirePort));
                 }
 
-                foreach (Transform o in elementInfoContent) Destroy(o.gameObject);
-                foreach (var elementProperty in e.elementProperties.propertiesArray)
-                {
-                    GameObject newInfo = Instantiate(elementInfoPrefab, elementInfoContent);
-                    newInfo.GetComponent<Text>().text =
-                        $"{elementProperty.displayName}: {elementProperty.value} {elementProperty.unitName}";
-                }
+                UpdateElementPropertiesUI();
 
                 UI.GetComponent<Animator>().SetBool("Connect", true);
                 NewPointer = selectPointer;
@@ -251,6 +245,8 @@ public class Player : NetworkBehaviour
                         newButton.GetComponent<Button>().onClick.AddListener(() => DestroyWithClose(temp));
                     }
                 }
+                
+                UpdateElementPropertiesUI();
 
                 UI.GetComponent<Animator>().SetBool("Connect", true);
                 NewPointer = selectPointer;
@@ -261,6 +257,17 @@ public class Player : NetworkBehaviour
             {
                 StartCoroutine(BlinkPointer(errorPointer));
             }
+        }
+    }
+
+    private void UpdateElementPropertiesUI()
+    {
+        foreach (Transform o in elementInfoContent) Destroy(o.gameObject);
+        foreach (var elementProperty in e.elementProperties.propertiesArray)
+        {
+            GameObject newInfo = Instantiate(elementInfoPrefab, elementInfoContent);
+            newInfo.GetComponent<Text>().text =
+                $"{elementProperty.displayName}: {elementProperty.value} {elementProperty.unitName}";
         }
     }
 

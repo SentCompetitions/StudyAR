@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Resources.Structs;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -87,7 +88,13 @@ namespace Resources.Game.ExperienceProcessor
                     e.voltage = source.targetVoltage;
                 }
                 _oldElements = new List<PhysicsElement>(_elements);
-                GameManager.instance.localPlayer.onGameAction.Invoke("CIRCUIT_COMPLETE_" + _elements.Count);
+
+                Step step = NetworkGameManager.instance.experience.actions[NetworkGameManager.instance.experience.GetFirstUnCompleteStep()];
+                if (step.action.StartsWith("SCHEME_MAKE_"))
+                {
+                    
+                }
+                GameManager.instance.localPlayer.onGameAction.Invoke("CIRCUIT_STATE_COMPLETE");
             }
             else
             {

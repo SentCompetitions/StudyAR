@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Resources.Structs
@@ -11,6 +12,7 @@ namespace Resources.Structs
         public bool isCompleted;
         public int id;
         public string image;
+        //public Dictionary<string, SchemaElement> schemaElements;
 
         [NonSerializedAttribute] public Texture2D imageTexture;
         [NonSerializedAttribute] public byte[] imageBytes;
