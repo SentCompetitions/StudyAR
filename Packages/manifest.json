@@ -9,6 +9,7 @@
     }
   ],
   "dependencies": {
+    "jillejr.newtonsoft.json-for-unity": "https://github.com/jilleJr/Newtonsoft.Json-for-Unity.git#12.0.301",
     "com.ptc.vuforia.engine": "9.6.3",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.3.9",

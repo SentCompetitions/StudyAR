@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Mirror;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Utilities;
 using Resources.ExperienceManager;
 using Resources.Structs;
 using UnityEngine;
@@ -14,6 +15,13 @@ public class ExperienceManager : MonoBehaviour
     public Text path;
 
     public int packJsonVersion = 1;
+    
+    void Awake()
+    {
+        AotHelper.EnsureDictionary<string, SchemaElement>();
+        AotHelper.EnsureDictionary<string, List<Dictionary<string, string>>>();
+        AotHelper.EnsureList<ElementProperty>();
+    }
 
     void Start()
     {
