@@ -483,7 +483,7 @@ public class Player : NetworkBehaviour
             RpcSetParent(_manager.elementsSpawnPoints[i].gameObject, obj);
         }
 
-        NetworkManager.singleton.maxConnections = 0;
+        NetworkManager.singleton.maxConnections = 0; // Закрываем возможность подключиться к игре
         NetworkGameManager.OnGameStarted.Invoke();
         RpcStartGame();
 
@@ -559,19 +559,5 @@ public class Player : NetworkBehaviour
     {
         gameObject.GetComponent<NetworkIdentity>().RemoveClientAuthority();
         gameObject.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
-    }
-
-
-    /// <summary>
-    /// Перекрывает ли палец игрока или указатель мыши объекты UI
-    /// </summary>
-    /// <returns>true если перекрывает, false если нет</returns>
-    private bool IsPointerOverUIObject()
-    {
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
     }
 }
